@@ -1,5 +1,8 @@
 sudo apt-get update
 sudo apt-get install git-all
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install openssh-client
 
 sudo apt-get remove docker docker-engine docker.io containerd runc
 

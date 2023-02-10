@@ -1,9 +1,13 @@
+# git
 sudo apt-get update
 sudo apt-get install git-all
 sudo apt-get update
 sudo apt-get upgrade
+
+# ssh
 sudo apt-get install openssh-client
 
+# docker
 sudo apt-get remove docker docker-engine docker.io containerd runc
 
 sudo apt-get install kgpg

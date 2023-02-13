@@ -12,4 +12,4 @@ COPY conf/nginx.conf etc/nginx/conf.d/default.conf
 RUN openssl req -nodes -newkey rsa:4096 -keyout etc/nginx/storm.key etc/nginx/storm.crt -x509
 
 # why deamon off;
-ENTRYPOINT ["nginx", "-g", "deamon off;"] 
+ENTRYPOINT ["nginx", "-g", "daemon off;"] 

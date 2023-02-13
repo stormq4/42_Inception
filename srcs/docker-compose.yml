@@ -24,12 +24,12 @@ services:
     container_name: nginx
     build: requirements/nginx/
     restart: always
+    ports:
+      - "443:443"
     # networks:
     #   - nginxwordpress
     # volumes:
     #   - WordPress:home/sde-quai/data/WordPress
-    ports:
-      - "443:443"
     # depends_on:
     #   - wordpress
   

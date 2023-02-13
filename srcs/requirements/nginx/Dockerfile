@@ -1,6 +1,4 @@
-FROM debian:bullseye
-
-
+FROM debian:buster
 
 RUN apt-get update && apt-get -y install nginx openssl
 
@@ -9,7 +7,7 @@ RUN apt-get update && apt-get -y install nginx openssl
 
 COPY conf/nginx.conf etc/nginx/conf.d/default.conf
 
-RUN openssl req -nodes -newkey rsa:4096 -keyout etc/nginx/storm.key etc/nginx/storm.crt -x509
+RUN openssl req -nodes -newkey rsa:4096 -keyout /etc/nginx/storm.key /etc/nginx/storm.crt -x509
 
 # why deamon off;
 ENTRYPOINT ["nginx", "-g", "daemon off;"] 

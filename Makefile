@@ -1,5 +1,5 @@
+all:
+	sudo docker compose -f srcs/docker-compose.yml --build
+
 push:
 	./gitp.sh
-
-all:
-	sudo docker-compose -f srcs/docker-compose.yml --build

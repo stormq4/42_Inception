@@ -11,7 +11,7 @@ RUN openssl req -nodes -newkey rsa:4096 -keyout /etc/nginx/storm.key -out /etc/n
 -subj "/C=NL/ST=Poepstate/L=Kipdorp/O=dikkelul Inc./CN=adsf. hoi" -x509
 
 # RUN mkdir -p /var/www/html
-COPY index.html /usr/share/nginx/html
+COPY index.html /var/www/html
 
 # EXPOSE 443
 

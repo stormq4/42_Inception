@@ -39,8 +39,8 @@ services:
     build: requirements/wordpress/
     env_file:
       - .env
-    depends_on: 
-      - mariadb
+    # depends_on: 
+    #   - mariadb
     networks:
       - nginxwordpress
     #   - wordpressmariadb

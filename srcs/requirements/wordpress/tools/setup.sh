@@ -2,9 +2,9 @@
 
 # https://blog.sucuri.net/2022/11/wp-cli-how-to-install-wordpress-via-ssh.html
 cd var/www/html
-sudo wp core download --allow-root
+wp core download --allow-root
 
-sudo wp core config --dbhost=WordPress --dbname=WordPress \
+wp core config --dbhost=WordPress --dbname=WordPress \
 --dbuser=${WP_ADMIN_USER} --dbpass=${WP_ADMIN_PASSWORD} --allow-root
 
 chmod 600 wp-config.php 

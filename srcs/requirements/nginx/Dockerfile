@@ -10,10 +10,10 @@ COPY conf/nginx.conf etc/nginx/conf.d/default.conf
 RUN openssl req -nodes -newkey rsa:4096 -keyout /etc/nginx/storm.key -out /etc/nginx/storm.crt \
 -subj "/C=NL/ST=Poepstate/L=Kipdorp/O=dikkelul Inc./CN=adsf. hoi" -x509
 
-RUN mkdir -p var/www/html
+RUN mkdir -p /var/www/html
 COPY index.html /var/www/html/
 
-EXPOSE 443
+# EXPOSE 443
 
 # why deamon off;
 ENTRYPOINT ["nginx", "-g", "daemon off;"] 

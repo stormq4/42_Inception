@@ -1,7 +1,7 @@
 # https://blog.sucuri.net/2022/11/wp-cli-how-to-install-wordpress-via-ssh.html
 
 cd var/www/html
-wp core download
+wp core download --alow-root
 
 wp core config --dbhost=WordPress --dbname=WordPress \
 --dbuser=${WP_ADMIN_USER} --dbpass=${WP_ADMIN_PASSWORD}
@@ -13,5 +13,3 @@ wp core install --url=${DOMAIN_NAME} --title="Hallo Wereld!" \
 
 wp user create ${WP_USER} emaillalala@42.fr --user-pass=${WP_PASSWORD} \
 --allow-root
-
-

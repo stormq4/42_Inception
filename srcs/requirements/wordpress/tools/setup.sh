@@ -1,5 +1,6 @@
-# https://blog.sucuri.net/2022/11/wp-cli-how-to-install-wordpress-via-ssh.html
+#!/bin/bash
 
+# https://blog.sucuri.net/2022/11/wp-cli-how-to-install-wordpress-via-ssh.html
 cd var/www/html
 wp core download --alow-root
 

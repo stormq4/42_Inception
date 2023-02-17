@@ -8,7 +8,7 @@
 
 #   DB:
 #     name: DB
-#     driver_ots:
+#     driver_opts:
 #       type: none
 #       o: bind;
 #       device: /home/sde-quai/data/DB

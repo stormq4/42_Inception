@@ -14,4 +14,10 @@ RUN mv wp-cli.phar /usr/local/bin/wp
 RUN wp cli update
 
 RUN mkdir -p var/www/html
+RUN chmod 755 /var/www/
+
+COPY tools/setup.sh /tmp/
+
+ENTRYPOINT /tmp/setup.sh
+
 

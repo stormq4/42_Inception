@@ -14,7 +14,7 @@
 #       device: /home/sde-quai/data/DB
 
 
-networks:
+# networks:
   # nginxwordpress:
 #   wordpressmariadb:
 

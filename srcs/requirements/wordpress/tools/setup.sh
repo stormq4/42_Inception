@@ -4,6 +4,9 @@
 cd var/www/html
 wp core download --allow-root
 
+wp config create --dbhost=WordPress --dbname=WordPress \
+--dbuser=${WP_ADMIN_USER} --dbpass=${WP_ADMIN_PASSWORD} --allow-root
+
 wp core config --dbhost=WordPress --dbname=WordPress \
 --dbuser=${WP_ADMIN_USER} --dbpass=${WP_ADMIN_PASSWORD} --allow-root
 

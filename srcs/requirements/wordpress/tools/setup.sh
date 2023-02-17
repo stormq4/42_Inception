@@ -6,7 +6,7 @@ wp core download --alow-root
 
 wp core config --dbhost=WordPress --dbname=WordPress \
 --dbuser=${WP_ADMIN_USER} --dbpass=${WP_ADMIN_PASSWORD}
-chmod 600 wp-config.php
+chmod 600 wp-config.php --alow-root
 
 wp core install --url=${DOMAIN_NAME} --title="Hallo Wereld!" \
 --admin_name=${WP_ADMIN_USER} --admin_password=${WP_ADMIN_PASSWORD} \

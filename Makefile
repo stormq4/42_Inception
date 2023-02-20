@@ -9,3 +9,6 @@ push:
 
 kill:
 	compose -f srcs/docker-compose.yml kill
+
+nginx:
+	sudo docker eec -it nginx /bin/bash

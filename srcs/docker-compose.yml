@@ -4,7 +4,7 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: home/sde-quai/data/WordPress
+      device: tmp/sde-quai/data/WordPress
 
 #   DB:
 #     name: DB
@@ -47,4 +47,3 @@ services:
   #   restart: always
   #   # volumes:
   #   #   - WordPress:home/sde-quai/data/WordPress
-    

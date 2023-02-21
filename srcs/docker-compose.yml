@@ -43,7 +43,7 @@ services:
     #   - mariadb
     networks:
       - nginxwordpress
+    volumes:
+      - WordPress:home/sde-quai/data/WordPress
   #   #   - wordpressmariadb
   #   restart: always
-  #   # volumes:
-  #   #   - WordPress:home/sde-quai/data/WordPress

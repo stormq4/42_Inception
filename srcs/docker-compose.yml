@@ -4,7 +4,7 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /home/sde-quai/data/WordPress
+      device: home/sde-quai/data/WordPress
 
 #   DB:
 #     name: DB

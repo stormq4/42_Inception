@@ -14,7 +14,6 @@ RUN openssl req -nodes -newkey rsa:4096 -keyout /etc/nginx/storm.key -out /etc/n
 RUN mkdir -p /var/www/html
 COPY index.html /var/www/html
 
-# EXPOSE 443
 
 # why deamon off;
 ENTRYPOINT ["nginx", "-g", "daemon off;"] 

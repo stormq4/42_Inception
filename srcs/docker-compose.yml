@@ -1,10 +1,10 @@
-# volumes:
-#   WordPress:
-#     name: WordPress
-#     driver_opts:
-#       type: none
-#       o: bind
-#       device: /home/sde-quai/data/WordPress
+volumes:
+  WordPress:
+    name: WordPress
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/sde-quai/data/WordPress
 
 #   DB:
 #     name: DB
@@ -14,8 +14,8 @@
 #       device: /home/sde-quai/data/DB
 
 
-# networks:
-  # nginxwordpress:
+networks:
+  nginxwordpress:
 #   wordpressmariadb:
 
 services:
@@ -28,21 +28,21 @@ services:
       - "443:443"
     # networks:
     #   - nginxwordpress
-    # volumes:
-    #   - WordPress:home/sde-quai/data/WordPress
-  #   depends_on:
-  #     - wordpress
+    volumes:
+      - WordPress:home/sde-quai/data/WordPress
+    depends_on:
+      - wordpress
   
-  # wordpress:
-  #   image: wordpress
-  #   container_name: wordpress
-  #   build: requirements/wordpress/
-  #   env_file:
-  #     - .env
-  #   # depends_on: 
-  #   #   - mariadb
-  #   networks:
-  #     - nginxwordpress
+  wordpress:
+    image: wordpress
+    container_name: wordpress
+    build: requirements/wordpress/
+    env_file:
+      - .env
+    # depends_on: 
+    #   - mariadb
+    networks:
+      - nginxwordpress
   #   #   - wordpressmariadb
   #   restart: always
   #   # volumes:

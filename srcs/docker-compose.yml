@@ -44,6 +44,6 @@ services:
     networks:
       - nginxwordpress
     volumes:
-      - WordPress:home/sde-quai/data/WordPress
+      - WordPress:tmp/sde-quai/data/WordPress
   #   #   - wordpressmariadb
   #   restart: always

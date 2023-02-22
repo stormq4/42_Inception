@@ -1,11 +1,3 @@
-volumes:
-  WordPress:
-    name: WordPress
-    driver_opts:
-      type: none
-      o: bind
-      device: ~/data/WordPress
-
 #   DB:
 #     name: DB
 #     driver_opts:

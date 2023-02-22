@@ -11,7 +11,7 @@ volumes:
 #     driver_opts:
 #       type: none
 #       o: bind;
-#       device: /home/sde-quai/data/DB
+#       device: ~/data/DB
 
 
 networks:
@@ -29,7 +29,7 @@ services:
     networks:
       - nginxwordpress
     volumes:
-      - WordPress:/var/www/html
+      - ~/data/WordPress:/var/www/html
     depends_on:
       - wordpress
   
@@ -46,5 +46,5 @@ services:
   #   #   - wordpressmariadb
   #   restart: always
     volumes:
-      - WordPress:/var/www/html
+      - ~/data/WordPress:/var/www/html
     

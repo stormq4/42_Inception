@@ -12,7 +12,7 @@ RUN chmod +x wp-cli.phar
 RUN mv wp-cli.phar /usr/local/bin/wp
 
 
-COPY conf/wp.conf /etc/php/7.3/fpm/pool.d
+COPY conf/wwww.conf /etc/php/7.3/fpm/pool.d
 
 RUN wp cli update
 

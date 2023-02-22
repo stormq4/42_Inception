@@ -16,7 +16,7 @@ COPY conf/www.conf /etc/php/7.3/fpm/pool.d
 
 RUN wp cli update
 
-RUN mkdir -p var/www/html
+RUN mkdir -p /var/www/html
 RUN chown -R www-data:www-data /var/www
 
 RUN chmod -R 755 /var/www/

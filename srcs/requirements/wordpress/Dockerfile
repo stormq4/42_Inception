@@ -24,9 +24,6 @@ RUN chmod -R 755 /var/www/
 COPY tools/setup.sh /tmp/
 RUN chmod 755 tmp/setup.sh 
 
-RUN sudo groupadd wordpress_user
-RUN sudo useradd -g wordpress_user wordpress_user
-
 ENTRYPOINT /tmp/setup.sh
 
 

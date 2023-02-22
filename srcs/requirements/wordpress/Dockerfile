@@ -24,6 +24,8 @@ RUN chmod -R 755 /var/www/
 COPY tools/setup.sh /tmp/
 RUN chmod 755 tmp/setup.sh 
 
+WORKDIR /var/www/html/
+
 ENTRYPOINT /tmp/setup.sh
 
 

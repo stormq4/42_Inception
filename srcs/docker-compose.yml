@@ -29,7 +29,7 @@ services:
     networks:
       - nginxwordpress
     volumes:
-      - WordPress:/home/sde-quai/data/WordPress
+      - ./WordPress:/home/sde-quai/data/WordPress
     depends_on:
       - wordpress
   

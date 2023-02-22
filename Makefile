@@ -1,4 +1,7 @@
 all:
+	@mkdir ~/data
+	@mdkir ~/data/WordPress
+	@mdkir ~/data/DB
 	sudo docker compose -f srcs/docker-compose.yml up --build
 
 

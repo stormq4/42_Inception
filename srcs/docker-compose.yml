@@ -26,8 +26,8 @@ services:
     restart: always
     ports:
       - "443:443"
-    # networks:
-    #   - nginxwordpress
+    networks:
+      - nginxwordpress
     volumes:
       - WordPress:home/sde-quai/data/WordPress
     depends_on:
@@ -39,10 +39,10 @@ services:
     build: requirements/wordpress/
     env_file:
       - .env
-    # depends_on: 
-    #   - mariadb
     networks:
       - nginxwordpress
+    # depends_on: 
+    #   - mariadb
   #   #   - wordpressmariadb
   #   restart: always
   #   # volumes:

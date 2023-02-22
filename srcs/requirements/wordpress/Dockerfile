@@ -11,13 +11,21 @@ RUN	curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli
 RUN chmod +x wp-cli.phar
 RUN mv wp-cli.phar /usr/local/bin/wp
 
+
+COPY conf/wp.conf /etc/php/7.3/fpm/pool.d
+
 RUN wp cli update
 
 RUN mkdir -p var/www/html
+RUN chown -R www-data:www-data /var/www
+
 RUN chmod -R 755 /var/www/
 
-COPY tools/setup.sh /tmp/
 RUN chmod 755 tmp/setup.sh 
+
+COPY tools/setup.sh /tmp/
+RUN sudo groupadd wordpress_user
+RUN sudo useradd -g wordpress_user wordpress_user
 
 ENTRYPOINT /tmp/setup.sh
 

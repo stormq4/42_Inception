@@ -21,9 +21,9 @@ RUN chown -R www-data:www-data /var/www
 
 RUN chmod -R 755 /var/www/
 
+COPY tools/setup.sh /tmp/
 RUN chmod 755 tmp/setup.sh 
 
-COPY tools/setup.sh /tmp/
 RUN sudo groupadd wordpress_user
 RUN sudo useradd -g wordpress_user wordpress_user
 

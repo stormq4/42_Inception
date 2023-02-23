@@ -21,7 +21,7 @@ services:
     networks:
       - nginxwordpress
     volumes:
-      - ./data/WordPress:/var/www/html
+      - ~/data/WordPress:/var/www/html
     depends_on:
       - wordpress
   
@@ -33,10 +33,10 @@ services:
       - .env
     networks:
       - nginxwordpress
+    volumes:
+      - ~/data/WordPress:/var/www/html
     # depends_on: 
     #   - mariadb
   #   #   - wordpressmariadb
   #   restart: always
-    volumes:
-      - ./data/WordPress:/var/www/html
     

@@ -3,7 +3,7 @@ volumes:
     name: DB
     driver_opts:
       type: none
-      o: bind;
+      # o: bind;
       device: /home/debian/data/WordPress/
 
 #   DB:

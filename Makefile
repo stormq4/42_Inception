@@ -25,4 +25,5 @@ wordpress:
 	sudo docker exec -it wordpress /bin/bash
 
 purge: stop
+	sudo docker-compose -f srcs/docker-compose.yml down -v
 	sudo docker system prune -af --volumes

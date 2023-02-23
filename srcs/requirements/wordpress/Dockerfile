@@ -26,6 +26,6 @@ RUN chmod 777 /tmp/setup
 
 WORKDIR /var/www/html/
 
-ENTRYPOINT sh ./tmp/setup
+ENTRYPOINT /tmp/setup
 
 

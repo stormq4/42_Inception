@@ -1,16 +1,17 @@
-#   DB:
-#     name: DB
-#     driver_opts:
-#       type: none
-#       o: bind;
-#       device: ~/data/DB
-
+volumes:
   WordPress:
     name: DB
     driver_opts:
       type: none
       o: bind;
       device: /home/debian/data/WordPress/
+
+#   DB:
+#     name: DB
+#     driver_opts:
+#       type: none
+#       o: bind;
+#       device: ~/data/DB
 
 
 networks:

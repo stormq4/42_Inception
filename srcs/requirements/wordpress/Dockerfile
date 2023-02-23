@@ -13,6 +13,7 @@ RUN mv wp-cli.phar /usr/local/bin/wp
 
 
 COPY conf/www.conf /etc/php/7.3/fpm/pool.d
+RUN mkdir /run/php
 
 RUN wp cli update
 

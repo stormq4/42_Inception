@@ -2,7 +2,7 @@ all:
 	mkdir -p ~/data
 	mkdir -p ~/data/WordPress
 	mkdir -p ~/data/DB
-	sudo docker compose -f srcs/docker-compose.yml up --build
+	sudo docker compose -f srcs/docker-compose.yml up --build -d
 
 
 stop:

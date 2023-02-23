@@ -19,4 +19,10 @@ kill:
 	compose -f srcs/docker-compose.yml kill
 
 nginx:
-	sudo docker eec -it nginx /bin/bash
+	sudo docker exec -it nginx /bin/bash
+
+wordpress:
+	sudo docker exec -it wordpress /bin/bash
+
+purge: stop
+	sudo docker system prune -af --volumes

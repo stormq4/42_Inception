@@ -26,6 +26,6 @@ RUN chmod 755 tmp/setup.sh
 
 WORKDIR /var/www/html/
 
-ENTRYPOINT sh ./tmp/setup.sh
+ENTRYPOINT ["sh", "tmp/setup.sh"]
 
 

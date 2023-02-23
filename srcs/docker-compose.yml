@@ -5,6 +5,13 @@
 #       o: bind;
 #       device: ~/data/DB
 
+  WordPress:
+    name: DB
+    driver_opts:
+      type: none
+      o: bind;
+      device: /home/debian/data/WordPress/
+
 
 networks:
   nginxwordpress:
@@ -21,7 +28,7 @@ services:
     networks:
       - nginxwordpress
     volumes:
-      - ~/data/WordPress:/var/www/html
+      - WordPress:/var/www/html/
     depends_on:
       - wordpress
   
@@ -34,7 +41,7 @@ services:
     networks:
       - nginxwordpress
     volumes:
-      - ~/data/WordPress:/var/www/html
+      - WordPress:/var/www/html/
     # depends_on: 
     #   - mariadb
   #   #   - wordpressmariadb

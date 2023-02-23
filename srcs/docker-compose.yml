@@ -1,6 +1,6 @@
 volumes:
   WordPress:
-    name: DB
+    name: WordPress
     driver_opts:
       type: none
       o: bind

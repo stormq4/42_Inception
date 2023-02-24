@@ -1,7 +1,6 @@
 all:
-	mkdir -p ~/data
-	mkdir -p ~/data/WordPress
-	mkdir -p ~/data/DB
+	mkdir -p /home/debian/data/WordPress
+	mkdir -p /home/debian/data/DB
 	sudo docker compose -f srcs/docker-compose.yml up --build
 
 

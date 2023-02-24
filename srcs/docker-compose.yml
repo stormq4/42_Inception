@@ -43,8 +43,8 @@ services:
       - nginxwordpress
     volumes:
       - WordPress:/var/www/html/
+    restart: always
     # depends_on: 
     #   - mariadb
   #   #   - wordpressmariadb
-  #   restart: always
     

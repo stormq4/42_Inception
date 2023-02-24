@@ -15,7 +15,7 @@ volumes:
 
 
 networks:
-  nginxwordpress:
+  nxwp:
 #   wordpressmariadb:
 
 services:
@@ -27,7 +27,7 @@ services:
     ports:
       - "443:443"
     networks:
-      - nginxwordpress
+      - nxwp
     volumes:
       - WordPress:/var/www/html/
     depends_on:
@@ -40,7 +40,7 @@ services:
     env_file:
       - .env
     networks:
-      - nginxwordpress
+      - nxwp
     volumes:
       - WordPress:/var/www/html/
     restart: always

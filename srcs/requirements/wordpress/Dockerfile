@@ -2,7 +2,7 @@
 FROM debian:buster
 
 
-RUN apt-get update && apt upgrade -y && apt-get install -y wget mariadb-client wget curl vim 
+RUN apt-get update && apt-get install -y wget mariadb-client wget curl vim 
 
 RUN apt-get update && apt-get -y install  php-fpm php-mysql php-gd
 

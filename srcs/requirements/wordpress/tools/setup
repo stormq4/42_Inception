@@ -19,4 +19,4 @@ wp core install --url=${DOMAIN_NAME} --title="Hallo Wereld!" \
 
 wp user create ${WP_USER} emaillalala@42.fr --user-pass=${WP_PASSWORD} --allow-root;
 
-exec /usr/sbin/php-fpm7.3 --nodaemonize
+/usr/sbin/php-fpm7.3 --nodaemonize

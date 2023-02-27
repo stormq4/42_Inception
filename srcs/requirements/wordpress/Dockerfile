@@ -13,9 +13,9 @@ RUN mv wp-cli.phar /usr/local/bin/wp
 
 RUN wp cli update
 
-COPY conf/www.conf /etc/php/7.3/fpm/pool.d
 RUN mkdir /run/php
-
+COPY conf/www.conf /etc/php/7.3/fpm/pool.d
+COPY /conf/wp-config.php /etc/wp-config.php
 
 RUN mkdir -p /var/www/html
 RUN chown -R www-data:www-data /var/www

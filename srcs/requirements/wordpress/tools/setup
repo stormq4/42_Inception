@@ -1,9 +1,9 @@
 #!/bin/bash
 
-set -x
+# set -x
 
 # https://blog.sucuri.net/2022/11/wp-cli-how-to-install-wordpress-via-ssh.html
-wp core download;
+wp core download --allow-root;
 
 wp config create --dbhost=WordPress --dbname=WordPress --dbuser=${WP_ADMIN_USER} --dbpass=${WP_ADMIN_PASSWORD} --allow-root;
 

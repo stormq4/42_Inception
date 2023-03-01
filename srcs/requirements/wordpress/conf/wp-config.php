@@ -3,7 +3,7 @@ define( 'DB_NAME', 'WordPress' );
 
 define( 'DB_USER', getenv('WP_ADMIN_USER') );
 define( 'DB_PASSWORD', getenv('WP_ADMIN_PASSWORD') );
-define( 'DB_HOST', 'WordPress' );
+define( 'DB_HOST', 'wordpress' );
 
 define( 'DB_CHARSET', 'utf8' );
 define( 'DB_COLLATE', '' );

@@ -22,7 +22,7 @@ RUN chown -R www-data:www-data /var/www/
 
 RUN chmod -R 755 /var/www/
 
-COPY /tools/setup /tmp/
+COPY /tools/setup.sh /tmp/
 # RUN chmod 777 /tmp/setup
 
 ENTRYPOINT /tmp/setup.sh

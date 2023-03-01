@@ -5,6 +5,8 @@ volumes:
       type: none
       o: bind
       device: /home/debian/data/WordPress/
+    env_file:
+      - .env
 
 #   DB:
 #     name: DB

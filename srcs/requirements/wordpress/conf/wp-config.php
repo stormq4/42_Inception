@@ -1,8 +1,8 @@
 <?php
 define( 'DB_NAME', 'WordPress' );
 
-define( 'DB_USER', $_ENV['WP_ADMIN_USER'] );
-define( 'DB_PASSWORD', $_ENV['WP_ADMIN_PASSWORD'] );
+define( 'DB_USER', getenv('WP_ADMIN_USER') );
+define( 'DB_PASSWORD', getenv('WP_ADMIN_PASSWORD') );
 define( 'DB_HOST', 'WordPress' );
 
 define( 'DB_CHARSET', 'utf8' );

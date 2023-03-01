@@ -6,23 +6,23 @@ volumes:
       o: bind
       device: /home/debian/data/WordPress/
 
-#   DB:
-#     name: DB
-#     driver_opts:
-#       type: none
-#       o: bind;
-#       device: ~/data/DB
+  DB:
+    name: DB
+    driver_opts:
+      type: none
+      o: bind;
+      device: home/debian/data/DB
 
 
 networks:
   nxwp:
-#   wordpressmariadb:
+  wpmdb:
 
 services:
   nginx:
     image: nginx
     container_name: nginx
-    build: requirements/nginx/
+    build: /requirements/nginx/
     restart: always
     ports:
       - "443:443"
@@ -36,15 +36,30 @@ services:
   wordpress:
     image: wordpress
     container_name: wordpress
-    build: requirements/wordpress/
+    build: /requirements/wordpress/
     env_file:
       - .env
     networks:
       - nxwp
+      - wpmdb
     volumes:
       - WordPress:/var/www/html/
     restart: always
-    # depends_on: 
-    #   - mariadb
+    depends_on: 
+      - mariadb
   #   #   - wordpressmariadb
+
+  mariadb:
+    image: mariadb
+    container_name: mariadb
+    build: /requirements/mariadb
+    env-file:
+      - .env
+    networks:
+      - wpmdb
+    Volumes:
+      - DB:/var/lib/mysql
+      restart: always
+    
+
     

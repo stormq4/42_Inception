@@ -13,18 +13,16 @@ RUN mv wp-cli.phar /usr/local/bin/wp
 
 RUN wp cli update
 
+RUN mkdir -p /var/www/html
 RUN mkdir /run/php
 COPY /conf/www.conf /etc/php/7.3/fpm/pool.d
-COPY /conf/wp-config.php /etc/wp-config.php
+COPY /conf/wp-config.php /var/www/html/wp-config.php
 
-RUN mkdir -p /var/www/html
-RUN chown -R www-data:www-data /var/www
+RUN chown -R www-data:www-data /var/www/
 
 RUN chmod -R 755 /var/www/
 
 COPY /tools/setup /tmp/
-RUN chmod 777 /tmp/setup
+# RUN chmod 777 /tmp/setup
 
-# WORKDIR /var/www/html/
-
-ENTRYPOINT /tmp/setup
+ENTRYPOINT /tmp/setup.sh

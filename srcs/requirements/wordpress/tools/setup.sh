@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # set -x
-echo "-----------start script for wordpress--------------"
+echo "-----------START script for wordpress--------------"
 cd /var/www/html
 # https://blog.sucuri.net/2022/11/wp-cli-how-to-install-wordpress-via-ssh.html
 wp core download --allow-root;
@@ -19,4 +19,5 @@ wp core install --url=${DOMAIN_NAME} --title="Hallo Wereld!" \
 
 wp user create ${WP_USER} emaillalala@42.fr --user-pass=${WP_PASSWORD} --allow-root;
 
-/usr/sbin/php-fpm7.3 --nodaemonize
+exec /usr/sbin/php-fpm7.3 --nodaemonize
+echo "-----------END script for wordpress--------------"

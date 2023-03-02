@@ -24,7 +24,7 @@ services:
     container_name: nginx
     depends_on:
       - wordpress
-    build: /requirements/nginx/
+    build: requirements/nginx/
     restart: always
     ports:
       - "443:443"
@@ -38,7 +38,7 @@ services:
     container_name: wordpress
     depends_on: 
       - mariadb
-    build: /requirements/wordpress/
+    build: requirements/wordpress/
     env_file:
       - .env
     networks:
@@ -51,7 +51,7 @@ services:
   mariadb:
     image: mariadb
     container_name: mariadb
-    build: /requirements/mariadb
+    build: requirements/mariadb
     env_file:
       - .env
     networks:

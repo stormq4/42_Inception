@@ -57,7 +57,7 @@ services:
       - .env
     networks:
       - wpmdb
-    Volumes:
+    volumes:
       - DB:/var/lib/mysql
     restart: always
     

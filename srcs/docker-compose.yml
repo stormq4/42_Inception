@@ -59,7 +59,7 @@ services:
       - wpmdb
     Volumes:
       - DB:/var/lib/mysql
-      restart: always
+    restart: always
     
 
     

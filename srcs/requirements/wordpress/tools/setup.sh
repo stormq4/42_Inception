@@ -13,6 +13,9 @@ wp core download --allow-root;
 
 # chmod 600 wp-config.php 
 
+until mysqladmin -hmariadb -u${WP_USER} -p${WP_PASSWORD} ping; do
+	sleep 2
+done
 wp core install --url=${DOMAIN_NAME} --title="Hallo Wereld!" \
 --admin_name=${WP_ADMIN_USER} --admin_password=${WP_ADMIN_PASSWORD} \
 --admin_email=kidsachterderits@42.fr --allow-root;

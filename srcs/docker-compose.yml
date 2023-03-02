@@ -53,7 +53,7 @@ services:
     image: mariadb
     container_name: mariadb
     build: /requirements/mariadb
-    env-file:
+    env_file:
       - .env
     networks:
       - wpmdb

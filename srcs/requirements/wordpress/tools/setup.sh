@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# set -x
+set -x
 echo "-----------START script for wordpress--------------"
 cd /var/www/html
 # https://blog.sucuri.net/2022/11/wp-cli-how-to-install-wordpress-via-ssh.html
@@ -13,7 +13,8 @@ wp core download --allow-root;
 
 # chmod 600 wp-config.php 
 
-until mysqladmin -hmariadb -u${WP_USER} -p${WP_PASSWORD} ping; do
+until mysqladmin -hmariadb -u${WP_USER} -p${WP_PASSWORD} ping
+do
 	sleep 2
 done
 wp core install --url=${DOMAIN_NAME} --title="Hallo Wereld!" \

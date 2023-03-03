@@ -7,5 +7,7 @@ RUN apt-get update && apt-get -y install mariadb-server
 COPY tools/dbSetup.sh /tmp/
 COPY conf/50-server.cnf /etc/mysql/mariadb.conf.d
 
-ENTRYPOINT ["sh", "/tmp/dbSetup.sh"]
+RUN chmod 777 /tmp/dbSetup.sh
+
+ENTRYPOINT ["sh", "/tmp/dbSetup"]
 

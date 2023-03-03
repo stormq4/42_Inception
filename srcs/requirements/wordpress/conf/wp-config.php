@@ -1,11 +1,11 @@
 <?php
-define( 'DB_NAME', 'WordPress' );
+define( 'DB_NAME', getenv('WB_DB_NAME') );
 
 define( 'DB_USER', getenv('WP_ADMIN_USER') );
 define( 'DB_PASSWORD', getenv('WP_ADMIN_PASSWORD') );
 /**define( 'DB_HOST', getenv('DOMAIN_NAME') ); 
 define( 'DB_HOST', 'localhost' ); */
-define( 'DB_HOST', 'mariadb' );
+define( 'DB_HOST', getenv('MDB_NAME') );
 
 define( 'DB_CHARSET', 'utf8' );
 define( 'DB_COLLATE', '' );

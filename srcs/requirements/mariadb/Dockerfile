@@ -10,4 +10,3 @@ COPY conf/50-server.cnf /etc/mysql/mariadb.conf.d
 RUN chmod 777 /tmp/dbSetup.sh
 
 ENTRYPOINT ["sh", "/tmp/dbSetup"]
-

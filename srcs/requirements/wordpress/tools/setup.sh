@@ -13,7 +13,7 @@ wp core download --allow-root;
 
 # chmod 600 wp-config.php 
 
-until mysqladmin -hmariadb -u${WP_USER} -p${WP_USER_PASSWORD} ping
+until mysqladmin -hmariadb -u${WP_USER} -p${WP_PASSWORD} ping
 do
 	sleep 1
 done

@@ -1,9 +1,6 @@
-
 FROM debian:buster
 
-
 RUN apt-get update && apt-get install -y wget mariadb-client wget curl vim 
-
 RUN apt-get update && apt-get -y install php7.3 php-fpm php-mysql php-gd mariadb-client curl libfcgi0ldbl 
 
 # https://wp-cli.org/
@@ -13,17 +10,15 @@ RUN mv wp-cli.phar /usr/local/bin/wp
 
 RUN wp cli update
 
-RUN mkdir -p /var/www/html
-RUN mkdir /run/php
 COPY /conf/www.conf /etc/php/7.3/fpm/pool.d
-# RUN chmod 755 /etc/php/7.3/fpm/pool.d/www.conf
+RUN mkdir -p /var/www/html
+RUN mkdir -p /run/php
 COPY /conf/wp-config.php /var/www/html/wp-config.php
+COPY /tools/setup.sh /tmp/
+# RUN chmod 755 /etc/php/7.3/fpm/pool.d/www.conf
 
 RUN chown -R www-data:www-data /var/www/
-
 RUN chmod -R 755 /var/www/
-
-COPY /tools/setup.sh /tmp/
 RUN chmod 777 /tmp/setup.sh
 
 ENTRYPOINT /tmp/setup.sh

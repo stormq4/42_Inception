@@ -1,6 +1,6 @@
 all:
-	mkdir -p ~/data/WordPress
-	mkdir -p ~/data/DB
+	mkdir -p $(HOME)/data/WordPress
+	mkdir -p $(HOME)/data/DB
 	sudo docker compose -f srcs/docker-compose.yml up --build
 
 
@@ -29,6 +29,6 @@ mariadb:
 purge: stop
 	sudo docker compose -f srcs/docker-compose.yml down -v
 	sudo docker system prune -af --volumes
-	sudo rm -rvf ~/data/WordPress ~/data/DB
+	sudo rm -rvf $(HOME)/data/WordPress $(HOME)/data/DB
 
 ppull: purge pull

@@ -1,6 +1,4 @@
 volumes:
-  environment:
-      - HOME
   WordPress:
     name: WordPress
     driver_opts:

@@ -1,7 +1,6 @@
 FROM debian:buster
 
-RUN apt-get update && apt-get install -y wget mariadb-client wget curl vim 
-RUN apt-get update && apt-get -y install php7.3 php-fpm php-mysql php-gd mariadb-client curl libfcgi0ldbl 
+RUN apt-get update && apt-get -y install php7.3 php-fpm php-mysql php-gd wget curl libfcgi0ldbl vim
 
 # https://wp-cli.org/
 RUN	curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar

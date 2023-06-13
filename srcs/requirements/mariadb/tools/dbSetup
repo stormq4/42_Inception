@@ -1,14 +1,16 @@
 #!bin/bash
 
-mkdir -p /var/run/mysqld
-chown -R mysql:mysql /var/run/mysqld
-chown -R mysql:mysql /var/lib/mysql
+if [ ! -d /run/myslqd ]
+then
+	mkdir -p /var/run/mysqld
+	chown -R mysql:mysql /var/run/mysqld
+	chown -R mysql:mysql /var/lib/mysql
 
-mysql_install_db
+	mysql_install_db --basedir=/usr --datadir=/var/lib/mysql
 
-service mysql stop
+	service mysql stop
 
-echo "test 2"
+	echo "test 2"
 
 cat > /tmp/dbSetup.sql << STOP
 CREATE DATABASE IF NOT EXISTS WORDPRESS;
@@ -19,12 +21,17 @@ DELETE FROM mysql.user WHERE User='root';
 FLUSH PRIVILEGES;
 STOP
 
-echo "test 1"
+	echo "test 1"
 
-service mysql start && mysql < /tmp/dbSetup.sql
 
-mysqladmin -u$WP_ADMIN_USER -p$WP_ADMIN_PASSWORD
-# mysqladmin -u$WP_ADMIN_USER -p$WP_ADMIN_PASSWORD shutdown
-# rm -f /tmp/wpdbscript.sql
+	mysqld --user=mysql --bootstrap < /tmp/dbSetup.sql
 
-mysqld
+fi
+# service mysql start && mysql < /tmp/dbSetup.sql
+
+# mysqladmin -u$WP_ADMIN_USER -p$WP_ADMIN_PASSWORD
+# # mysqladmin -u$WP_ADMIN_USER -p$WP_ADMIN_PASSWORD shutdown
+# # rm -f /tmp/wpdbscript.sql
+
+# mysqld
+exec mysqld --user=mysql --console

@@ -13,3 +13,6 @@ lc-messages-dir         = /usr/share/mysql
 pid-file                = /run/mysqld/mysqld.pid
 socket                  = /run/mysqld/mysqld.sock
 log_error 				= /var/log/mysql/error.log
+
+[client]
+socket=/var/lib/mysql/mysql.sock

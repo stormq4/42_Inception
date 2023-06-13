@@ -4,14 +4,14 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: ${HOME}/data/WordPress/
+      device: /home/debian/data/WordPress/
 
   DB:
     name: DB
     driver_opts:
       type: none
       o: bind
-      device: ${HOME}/data/DB/
+      device: /home/debian/data/DB/
 
 
 networks:

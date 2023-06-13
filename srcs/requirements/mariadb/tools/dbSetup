@@ -34,5 +34,5 @@ fi
 # # rm -f /tmp/wpdbscript.sql
 
 # mysqld
-mysqladmin -h${MDB_NAME} -u${WP_USER} -p${WP_PASSWORD} ping
+# mysqladmin -h${MDB_NAME} -u${WP_USER} -p${WP_PASSWORD} ping
 exec mysqld --user=mysql --console

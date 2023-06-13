@@ -2,7 +2,7 @@
 
 FROM debian:buster
 
-RUN apt-get update && apt-get -y install mariadb-server 
+RUN apt-get update && apt-get -y install mariadb-server mysql-server
 
 COPY tools/dbSetup /tmp/
 COPY conf/50-server.cnf /etc/my.cnf

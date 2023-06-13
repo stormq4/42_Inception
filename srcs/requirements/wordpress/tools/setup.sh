@@ -13,9 +13,9 @@ wp core download --allow-root;
 
 # chmod 600 wp-config.php 
 
-until mysqladmin -h${MDB_NAME} -u${WP_USER} -p${WP_PASSWORD} ping
+until mysqladmin -h${MDB_NAME} -u${WP_USER} -p${WP_PASSWORD} --silent ping
 do
-	sleep 1
+	sleep 10
 done
 wp core install --url=${DOMAIN_NAME} --title="Hallo Wereld!" \
 --admin_name=${WP_ADMIN_USER} --admin_password=${WP_ADMIN_PASSWORD} \

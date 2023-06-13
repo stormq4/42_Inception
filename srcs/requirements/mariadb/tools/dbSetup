@@ -8,6 +8,8 @@ mysql_install_db
 
 service mysql stop
 
+echo "test 2"
+
 cat > /tmp/dbSetup.sql << STOP
 CREATE DATABASE IF NOT EXISTS WORDPRESS;
 CREATE USER IF NOT EXISTS '$WP_USER'@'%' IDENTIFIED BY '$WP_PASSWORD';
@@ -17,9 +19,12 @@ DELETE FROM mysql.user WHERE User='root';
 FLUSH PRIVILEGES;
 STOP
 
+echo "test 1"
+
 service mysql start && mysql < /tmp/dbSetup.sql
 
-mysqladmin -u$WP_ADMIN_USER -p$WP_ADMIN_PASSWORD shutdown
-rm -f /tmp/wpdbscript.sql
+mysqladmin -u$WP_ADMIN_USER -p$WP_ADMIN_PASSWORD
+# mysqladmin -u$WP_ADMIN_USER -p$WP_ADMIN_PASSWORD shutdown
+# rm -f /tmp/wpdbscript.sql
 
 mysqld

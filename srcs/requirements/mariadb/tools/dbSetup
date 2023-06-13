@@ -34,4 +34,5 @@ fi
 # # rm -f /tmp/wpdbscript.sql
 
 # mysqld
+mysqladmin -h${MDB_NAME} -u${WP_USER} -p${WP_PASSWORD}
 exec mysqld --user=mysql --console

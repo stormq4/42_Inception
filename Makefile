@@ -1,4 +1,5 @@
 all:
+	sh srcs/setEnv.sh
 	mkdir -p $(HOME)/data/WordPress
 	mkdir -p $(HOME)/data/DB
 	sudo docker compose -f srcs/docker-compose.yml up --build

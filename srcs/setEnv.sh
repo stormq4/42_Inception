@@ -1,4 +1,6 @@
-# 
+#!bin/bash
+
+cat > .env << STOP 
 DOMAIN_NAME=sde-quai.42.fr
 # Certificates
 CERTS_=./asdfasdfasf
@@ -13,5 +15,6 @@ WP_ADMIN_PASSWORD=wpAdminP
 WP_DB_NAME=WordPress
 
 MDB_NAME=mariadb
+STOP
 
-HOME_DIR=$HOME
+echo HOME_DIR=$HOME >> .env

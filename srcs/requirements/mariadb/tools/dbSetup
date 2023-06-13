@@ -4,7 +4,7 @@ mkdir -p /var/run/mysqld
 chown -R mysql:mysql /var/run/mysqld
 chown -R mysql:mysql /var/lib/mysql
 
-sudo mysql_install_db
+mysql_install_db
 
 sudo service mysql stop
 
@@ -17,7 +17,7 @@ DELETE FROM mysql.user WHERE User='root';
 FLUSH PRIVILEGES;
 STOP
 
-sudo service mysql start && sudo  mysql < /tmp/dbSetup.sql
+sudo service mysql start && mysql < /tmp/dbSetup.sql
 
 sudo mysqladmin -u$WP_ADMIN_USER -p$WP_ADMIN_PASSWORD shutdown
 rm -f /tmp/wpdbscript.sql

@@ -12,4 +12,4 @@ log_error 				= /var/log/mysql/error.log
 
 [client]
 
-socket=/var/lib/mysql/mysql.sock
+socket					= /var/lib/mysql/mysql.sock

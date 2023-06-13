@@ -4,9 +4,9 @@ mkdir -p /var/run/mysqld
 chown -R mysql:mysql /var/run/mysqld
 chown -R mysql:mysql /var/lib/mysql
 
-mysql_install_db
+sudo mysql_install_db
 
-service mysql stop
+sudo service mysql stop
 
 cat > /tmp/dbSetup.sql << STOP
 CREATE DATABASE IF NOT EXISTS WORDPRESS;
@@ -17,9 +17,9 @@ DELETE FROM mysql.user WHERE User='root';
 FLUSH PRIVILEGES;
 STOP
 
-service mysql start && mysql < /tmp/dbSetup.sql
+sudo service mysql start && sudo  mysql < /tmp/dbSetup.sql
 
-mysqladmin -u$WP_ADMIN_USER -p$WP_ADMIN_PASSWORD shutdown
+sudo mysqladmin -u$WP_ADMIN_USER -p$WP_ADMIN_PASSWORD shutdown
 rm -f /tmp/wpdbscript.sql
 
 mysqld

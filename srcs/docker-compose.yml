@@ -1,10 +1,10 @@
 volumes:
-  WordPress:
-    name: WordPress
-    driver_opts:
-      type: none
-      o: bind
-      device: /Users/stormdequay/data/WordPress/
+  # WordPress:
+  #   name: WordPress
+  #   driver_opts:
+  #     type: none
+  #     o: bind
+  #     device: /Users/stormdequay/data/WordPress/
 
   DB:
     name: DB

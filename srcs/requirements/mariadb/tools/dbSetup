@@ -21,7 +21,7 @@ ALTER USER 'root'@'localhost' IDENTIFIED BY '$ROOT_PW';
 FLUSH PRIVILEGES;
 STOP
 
-mysql < /tmp/dbsetup.sql > /devnull
+mysql < /tmp/dbSetup.sql > /devnull
 
 kill "$MDB_PID"
 wait "$MDB_PID"

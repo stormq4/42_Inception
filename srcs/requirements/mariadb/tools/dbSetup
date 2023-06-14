@@ -2,13 +2,13 @@
 
 # mkdir -p /var/run/mysqld
 
-while [ 1 ]
-do
+# while [ 1 ]
+# do
+# sleep 100
+# done
 echo "starting deamon"
-sleep 100
-done
 
-/usr/bin/mysqld --user=mysql --skip-networking --default-time-zone=SYSTEM --wsrep_on=OFF \
+/usr/sbin/mysqld --user=mysql --skip-networking --default-time-zone=SYSTEM --wsrep_on=OFF \
 		--expire-logs-days=0 \
 		--loose-innodb_buffer_pool_load_at_startup=0 >/dev/null &
 MDB_PID=$!
@@ -31,4 +31,4 @@ kill $MDB_PID
 wait $MDB_PID
 echo "stopping deamon"
 mysqld --user=mysql --bootstrap < /tmp/dbSetup.sql
-exec /usr/bin/mysqld --user=mysql --console > /dev/null
+exec /usr/sbin/mysqld --user=mysql --console > /dev/null

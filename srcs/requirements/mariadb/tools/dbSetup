@@ -2,8 +2,11 @@
 
 # mkdir -p /var/run/mysqld
 
-echo "starting deamon"
 while [ 1 ]
+do
+echo "starting deamon"
+sleep 100
+done
 
 /usr/bin/mysqld --user=mysql --skip-networking --default-time-zone=SYSTEM --wsrep_on=OFF \
 		--expire-logs-days=0 \

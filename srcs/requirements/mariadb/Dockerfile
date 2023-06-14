@@ -7,6 +7,8 @@ mariadb-client
 
 COPY tools/dbSetup /tmp/
 
+RUN mkdir -p /var/run/mysqld
+
 RUN chown -R mysql:mysql /var/run/mysqld
 RUN	chown -R mysql:mysql /var/lib/mysql
 	

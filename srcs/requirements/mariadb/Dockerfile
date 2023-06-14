@@ -2,7 +2,7 @@
 
 FROM debian:buster
 
-RUN apt-get update && apt-get -y install mariadb \
+RUN apt-get update && apt-get -y install mariadb-server \
 mariadb-client
 
 COPY tools/dbSetup /tmp/

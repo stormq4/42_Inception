@@ -7,10 +7,10 @@ mariadb-client
 
 COPY tools/dbSetup /tmp/
 
-RUN mkdir -p /var/run/mysqld
+RUN mkdir -p /run/mysqld
 
-RUN chown -R mysql:mysql /var/run/mysqld
-RUN	chown -R mysql:mysql /var/lib/mysql
+RUN chown -R mysql:mysql /run/mysqld
+RUN chmod +x /run/mysqld
 	
 RUN	mysql_install_db --basedir=/usr --datadir=/var/lib/mysql --user=mysql --skip-test-db > /dev/null
 

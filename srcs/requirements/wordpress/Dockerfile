@@ -29,4 +29,6 @@ RUN chown -R www-data:www-data /var/www/
 RUN chmod -R 755 /var/www/
 RUN chmod 777 /tmp/setup.sh
 
+WORKDIR /var/www/html
+
 ENTRYPOINT /tmp/setup.sh

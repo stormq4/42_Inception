@@ -2,7 +2,6 @@
 
 set -x
 echo "-----------START script for wordpress--------------"
-cd /var/www/html
 # https://blog.sucuri.net/2022/11/wp-cli-how-to-install-wordpress-via-ssh.html
 
 # wp config create --dbhost=WordPress --dbname=WordPress --dbuser=${WP_ADMIN_USER} --dbpass=${WP_ADMIN_PASSWORD} --allow-root;
@@ -14,7 +13,7 @@ cd /var/www/html
 
 until mysqladmin -h${MDB_NAME} -u${WP_USER} -p${WP_PASSWORD} --silent ping
 do
-	sleep 10
+	sleep 5
 done
 wp core download --allow-root;
 wp core install --url=${DOMAIN_NAME} --title="Hallo Wereld!" \

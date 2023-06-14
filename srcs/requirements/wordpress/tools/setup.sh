@@ -11,7 +11,7 @@ echo "-----------START script for wordpress--------------"
 
 # chmod 600 wp-config.php 
 
-until mysqladmin -h${MDB_NAME} -u${WP_USER} -p${WP_PASSWORD} --silent ping
+until mysqladmin -h${MDB_NAME} -u${WP_USER} -p${WP_PASSWORD} -${WP_DB_NAME} --silent ping
 do
 	sleep 5
 done

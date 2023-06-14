@@ -14,9 +14,9 @@ volumes:
       device: /Users/stormdequay/data/DB/
 
 
-networks:
-  nxwp:
-  wpmdb:
+# networks:
+#   nxwp:
+#   wpmdb:
 
 # services:
 #   nginx:
@@ -54,8 +54,8 @@ networks:
     build: requirements/mariadb
     env_file:
       - .env
-    networks:
-      - wpmdb
+    # networks:
+    #   - wpmdb
     volumes:
       - DB:/var/lib/mysql/
     restart: always

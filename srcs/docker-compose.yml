@@ -5,48 +5,48 @@ volumes:
       type: none
       o: bind
       device: /Users/stormdequay/data/DB/
-  # WordPress:
-  #   name: WordPress
-  #   driver_opts:
-  #     type: none
-  #     o: bind
-  #     device: /Users/stormdequay/data/WordPress/
+  WordPress:
+    name: WordPress
+    driver_opts:
+      type: none
+      o: bind
+      device: /Users/stormdequay/data/WordPress/
 
 
 
-# networks:
-#   nxwp:
-#   wpmdb:
+networks:
+  nxwp:
+  wpmdb:
 
 services:
-  # nginx:
-  #   image: nginx
-  #   container_name: nginx
-  #   depends_on:
-  #     - wordpress
-  #   build: requirements/nginx/
-  #   restart: always
-  #   ports:
-  #     - "443:443"
-  #   networks:
-  #     - nxwp
-  #   volumes:
-  #     - WordPress:/var/www/html/
+  nginx:
+    image: nginx
+    container_name: nginx
+    depends_on:
+      - wordpress
+    build: requirements/nginx/
+    restart: always
+    ports:
+      - "443:443"
+    networks:
+      - nxwp
+    volumes:
+      - WordPress:/var/www/html/
   
-  # wordpress:
-  #   image: wordpress
-  #   container_name: wordpress
-  #   depends_on: 
-  #     - mariadb
-  #   build: requirements/wordpress/
-  #   env_file:
-  #     - .env
-  #   networks:
-  #     - nxwp
-  #     - wpmdb
-  #   volumes:
-  #     - WordPress:/var/www/html/
-  #   restart: always
+  wordpress:
+    image: wordpress
+    container_name: wordpress
+    depends_on: 
+      - mariadb
+    build: requirements/wordpress/
+    env_file:
+      - .env
+    networks:
+      - nxwp
+      - wpmdb
+    volumes:
+      - WordPress:/var/www/html/
+    restart: always
 
   mariadb:
     image: mariadb
@@ -54,8 +54,8 @@ services:
     build: requirements/mariadb
     env_file:
       - .env
-    # networks:
-    #   - wpmdb
+    networks:
+      - wpmdb
     volumes:
       - DB:/var/lib/mysql/
     restart: always

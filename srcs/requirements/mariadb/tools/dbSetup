@@ -1,11 +1,5 @@
 #!bin/bash
 
-# mkdir -p /var/run/mysqld
-
-# while [ 1 ]
-# do
-# sleep 100
-# done
 echo "starting deamon"
 
 /usr/sbin/mysqld --user=mysql --skip-networking --default-time-zone=SYSTEM --wsrep_on=OFF \

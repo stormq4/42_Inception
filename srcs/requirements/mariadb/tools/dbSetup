@@ -21,8 +21,8 @@ STOP
 
 mysql < /tmp/dbSetup.sql > /devnull
 
-kill $MDB_PID
-wait $MDB_PID
-echo "stopping deamon"
-mysqld --user=mysql --bootstrap < /tmp/dbSetup.sql
-exec /usr/sbin/mysqld --user=mysql --console > /dev/null
+# kill $MDB_PID
+# wait $MDB_PID
+# echo "stopping deamon"
+# mysqld --user=mysql --bootstrap < /tmp/dbSetup.sql
+# exec /usr/sbin/mysqld --user=mysql --console > /dev/null

@@ -10,6 +10,7 @@ RUN apt-get update && apt-get -y install \
 		libfcgi0ldbl \
 		vim \
 		mariadb-client \
+		php7.3-mysql \
 		php-pdo_mysql \
 		php-mysqli \
 		php-mbstring

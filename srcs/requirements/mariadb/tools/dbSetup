@@ -12,7 +12,7 @@ MDB_PID=$!
 
 echo "this is PID: $MDB_PID"
 
-sleep 10
+sleep 4
 
 cat > /tmp/dbSetup.sql << STOP
 USE mysql;

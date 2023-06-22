@@ -4,13 +4,6 @@ set -x
 echo "-----------START script for wordpress--------------"
 # https://blog.sucuri.net/2022/11/wp-cli-how-to-install-wordpress-via-ssh.html
 
-# wp config create --dbhost=WordPress --dbname=WordPress --dbuser=${WP_ADMIN_USER} --dbpass=${WP_ADMIN_PASSWORD} --allow-root;
-
-# wp core config --dbhost=WordPress --dbname=WordPress \
-# --dbuser=${WP_ADMIN_USER} --dbpass=${WP_ADMIN_PASSWORD} --allow-root;
-
-# chmod 600 wp-config.php 
-
 while ! mysql -h$MDB_HOST -u$WP_USER -p$WP_PASSWORD $WP_DB_NAME & > /dev/null
 do
 	sleep 5

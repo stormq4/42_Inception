@@ -13,7 +13,7 @@ RUN apt-get update && apt-get -y install \
 		php7.3-mysql \
 		php-mysqli \
 		php-mbstring \
-		php-mysql \
+		# php-mysql \
 		# php7.3 \
 		# php-gd \
 		# php-pdo_mysql \

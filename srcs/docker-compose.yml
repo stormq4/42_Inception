@@ -49,6 +49,11 @@ services:
     restart: always
 
   mariadb:
+    deploy:
+        resources:
+          limits:
+            cpus: '0.50'
+            memory: 500M  
     image: mariadb
     container_name: mariadb
     build: requirements/mariadb

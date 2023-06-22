@@ -14,11 +14,10 @@ RUN apt-get update && apt-get -y install \
 		# php-pdo_mysql \
 		php-mysqli \
 		php-mbstring
-		
-		# php7.3 \
+		php-mysql \
+		php-gd \
+		php7.3 \
 		# php-fpm \
-		# php-mysql \
-		# php-gd \
 
 # https://wp-cli.org/
 RUN	curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar

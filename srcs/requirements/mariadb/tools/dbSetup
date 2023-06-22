@@ -24,7 +24,11 @@ ALTER USER 'root'@'localhost' IDENTIFIED BY '$ROOT_PW';
 FLUSH PRIVILEGES;
 STOP
 
+
+
 mysql < /tmp/dbSetup.sql > /devnull
+
+echo "start sql"
 
 # kill $MDB_PID
 # wait $MDB_PID

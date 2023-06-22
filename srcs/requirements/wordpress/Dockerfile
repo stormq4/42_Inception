@@ -1,7 +1,7 @@
 FROM debian:buster
 
 RUN apt-get update && apt-get -y install \
-		php-openssl \
+		# php-openssl \
 		php-phar \
 		php-fpm \
 		php \

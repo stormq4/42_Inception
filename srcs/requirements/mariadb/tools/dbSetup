@@ -32,6 +32,6 @@ echo "start sql"
 
 kill $MDB_PID
 wait $MDB_PID
-# echo "stopping deamon"
-# mysqld --user=mysql --bootstrap < /tmp/dbSetup.sql
-# exec /usr/sbin/mysqld --user=mysql --console > /dev/null
+echo "stopping deamon"
+mysqld --user=mysql --bootstrap < /tmp/dbSetup.sql
+exec /usr/sbin/mysqld --user=mysql --console > /dev/null

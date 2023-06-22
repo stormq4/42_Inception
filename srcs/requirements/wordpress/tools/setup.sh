@@ -16,6 +16,9 @@ do
 	sleep 5
 done
 wp core download --allow-root;
+
+sleep 5
+
 wp core install --url=$DOMAIN_NAME --title="Hallo Wereld!" --admin_user=$WP_ADMIN_USER --admin_password=$WP_ADMIN_PASSWORD --admin_email=$WP_EMAIL --skip-email --allow-root;
 
 wp user create $WP_USER $WP_EMAIL --role=author --user-pass=$WP_PASSWORD --allow-root

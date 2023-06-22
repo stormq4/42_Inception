@@ -12,7 +12,7 @@ RUN apt-get update && apt-get -y install \
 		mariadb-client \
 		php-pdo_mysql \
 		php-mysqli \
-		php-mbstring
+		# php-mbstring
 		
 		# php7.3 \
 		# php-fpm \

@@ -11,12 +11,12 @@ RUN apt-get update && apt-get -y install \
 		vim \
 		mariadb-client \
 		php7.3-mysql \
-		# php-pdo_mysql \
 		php-mysqli \
 		php-mbstring
 		php-mysql \
-		php-gd \
+		php7.2-gd \
 		php7.3 \
+		# php-pdo_mysql \
 		# php-fpm \
 
 # https://wp-cli.org/

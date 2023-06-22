@@ -1,7 +1,7 @@
 FROM debian:buster
 
 RUN apt-get update && apt-get -y install \
-		# php-openssl \
+		openssl\
 		php-phar \
 		php-fpm \
 		php \
@@ -10,7 +10,7 @@ RUN apt-get update && apt-get -y install \
 		libfcgi0ldbl \
 		vim \
 		mariadb-client \
-		# php-pdo_mysql \
+		php-pdo_mysql \
 		php-mysqli \
 		php-mbstring
 		

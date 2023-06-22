@@ -11,7 +11,7 @@ RUN apt-get update && apt-get -y install \
 		vim \
 		mariadb-client \
 		php7.3-mysql \
-		php-pdo_mysql \
+		# php-pdo_mysql \
 		php-mysqli \
 		php-mbstring
 		

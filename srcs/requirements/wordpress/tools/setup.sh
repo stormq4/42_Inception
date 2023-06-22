@@ -11,7 +11,7 @@ echo "-----------START script for wordpress--------------"
 
 # chmod 600 wp-config.php 
 
-while ! mysql -h${MDB_HOST} -u${WP_USER} -p${WP_PASSWORD} ${WP_DB_NAME} & > /dev/null
+while ! mysql -h$MDB_HOST -u$WP_USER -p$WP_PASSWORD $WP_DB_NAME & > /dev/null
 do
 	sleep 5
 done

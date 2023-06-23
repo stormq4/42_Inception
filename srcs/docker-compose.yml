@@ -58,7 +58,7 @@ services:
       - wpmdb
     volumes:
       - DB:/var/lib/mysql/
-    # restart: always
+    restart: always
     deploy:
         resources:
           limits:

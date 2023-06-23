@@ -7,7 +7,7 @@ echo "-----------START script for wordpress------------"
 if [ ! -f "index.php" ]
 then
 	echo "------START Connecting to database------"
-	while mariadb -h$MDB_HOST -u$WP_USER -p$WP_PASSWORD & 
+	while mariadb -h$MDB_HOST -u$WP_USER -p$WP_PASSWORD 
 	do
 	# > /dev/null
 		sleep 3

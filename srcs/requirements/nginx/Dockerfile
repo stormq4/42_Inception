@@ -20,5 +20,5 @@ RUN openssl req -nodes -newkey rsa:4096 -x509 \
 RUN mkdir -p /var/www/html
 
 
-# RUN nginx -t
-RUN ["nginx", "-g", "daemon off;"] 
+CMD nginx -t
+CMD ["nginx", "-g", "daemon off;"] 

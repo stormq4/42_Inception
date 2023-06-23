@@ -35,4 +35,4 @@ echo "start sql"
 # # sed -i "s|.*bind-address\s*=.*|bind-address=0.0.0.0|g" /etc/my.cnf.d/mariadb-server.cnf
 
 mysqld --user=mysql --bootstrap < /tmp/dbSetup.sql
-exec /usr/sbin/mysqld --user=mysql --console > /dev/null
+exec /usr/sbin/mysqld --user=mysql > /dev/null

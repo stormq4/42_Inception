@@ -11,7 +11,7 @@ MDB_PID=$!
 
 echo "this is PID: $MDB_PID"
 
-sleep 10
+sleep 4
 
 cat << STOP > /tmp/dbSetup.sql
 	CREATE DATABASE IF NOT EXISTS $WP_DB_NAME;\

@@ -17,5 +17,5 @@ wp core install --url=$DOMAIN_NAME/wordpress --title="Hallo Wereld!" --admin_use
 
 wp user create $WP_USER $WP_EMAIL --role=author --user_pass=$WP_PASSWORD --allow-root
 
-exec php-fpm8 --nodaemonize
+exec php-fpm7.3 --nodaemonize
 echo "-----------END script for wordpress--------------"

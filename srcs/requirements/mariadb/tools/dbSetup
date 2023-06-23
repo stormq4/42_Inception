@@ -9,6 +9,10 @@ GRANT ALL PRIVILEGES ON $WP_DB_NAME.* TO '$WP_USER'@'%';
 ALTER USER 'root'@'localhost' IDENTIFIED BY '$ROOT_PW';
 FLUSH PRIVILEGES;"
 
+echo "------testing sql file----"
+cat /tmp/dbSetup.sql
+echo "----done---"
+
 echo "starting deamon"
 /usr/sbin/mysqld --user=mysql --skip-networking --default-time-zone=SYSTEM --wsrep_on=OFF \
 		--expire-logs-days=0 \
@@ -18,10 +22,6 @@ sleep 10
 
 echo "this is PID: $MDB_PID"
 
-
-echo "------testing sql file----"
-cat /tmp/dbSetup.sql
-echo "----done---"
 
 
 mysql < /tmp/dbSetup.sql > /devnull
@@ -33,7 +33,6 @@ wait $MDB_PID
 echo "start sql"
 sed -i "s|skip-networking|# skip-networking|g" /etc/mysql/mariadb.conf.d/50-server.cnf
 sed -i "s|.*bind-address\s*=.*|bind-address=0.0.0.0|g" /etc/mysql/mariadb.conf.d/50-server.cnf
-# mysqld_safe --user-mysql
 
 mysqld --user=mysql --bootstrap < /tmp/dbSetup.sql
 exec /usr/sbin/mysqld --user=mysql > /dev/null

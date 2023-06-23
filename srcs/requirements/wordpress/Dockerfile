@@ -1,7 +1,7 @@
 FROM debian:buster
 
 RUN apt-get update && apt-get -y install \
-		openssl \
+		php-openssl \
 		php-phar \
 		php-fpm \
 		php \
@@ -13,10 +13,11 @@ RUN apt-get update && apt-get -y install \
 		php7.3-mysql \
 		php-mysqli \
 		php-mbstring \
-		php-gd 
-		# php-mysql \
+		php-mysql \
+		php-pdo_mysql \
+		lsb-release \
+		php-gd \
 		# php7.3 \
-		# php-pdo_mysql \
 		# php-fpm \
 
 # https://wp-cli.org/

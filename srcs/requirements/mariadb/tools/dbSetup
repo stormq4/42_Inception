@@ -2,6 +2,13 @@
 
 set -x
 
+echo  > /tmp/dbSetup.sql \
+	"CREATE DATABASE IF NOT EXISTS $WP_DB_NAME;\
+	CREATE USER IF NOT EXISTS '$WP_USER'@'%' IDENTIFIED BY '$WP_PASSWORD';\
+	GRANT ALL PRIVILEGES ON $WP_DB_NAME.* TO '$WP_USER'@'%';\
+	ALTER USER 'root'@'localhost' IDENTIFIED BY '$ROOT_PW';\
+	FLUSH PRIVILEGES;"
+
 echo "starting deamon"
 /usr/sbin/mysqld --user=mysql --skip-networking --default-time-zone=SYSTEM --wsrep_on=OFF \
 		--expire-logs-days=0 \
@@ -11,12 +18,6 @@ sleep 10
 
 echo "this is PID: $MDB_PID"
 
-echo  > /tmp/dbSetup.sql \
-	"CREATE DATABASE IF NOT EXISTS $WP_DB_NAME;\
-	CREATE USER IF NOT EXISTS '$WP_USER'@'%' IDENTIFIED BY '$WP_PASSWORD';\
-	GRANT ALL PRIVILEGES ON $WP_DB_NAME.* TO '$WP_USER'@'%';\
-	ALTER USER 'root'@'localhost' IDENTIFIED BY '$ROOT_PW';\
-	FLUSH PRIVILEGES;"
 
 echo "------testing sql file----"
 cat /tmp/dbSetup.sql

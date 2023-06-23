@@ -31,4 +31,7 @@ purge: stop
 	sudo docker system prune -af --volumes
 	sudo rm -rvf $(HOME)/data/WordPress $(HOME)/data/DB
 
+debian:
+	sudo docker pull debian:buster
+
 ppull: purge pull

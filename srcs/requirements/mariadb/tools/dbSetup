@@ -32,8 +32,8 @@ echo "stopping deamon"
 kill $MDB_PID
 wait $MDB_PID
 echo "start sql"
-sed -i "s|skip-networking|# skip-networking|g" /etc/my.cnf.d/mariadb-server.cnf
-sed -i "s|.*bind-address\s*=.*|bind-address=0.0.0.0|g" /etc/my.cnf.d/mariadb-server.cnf
+# sed -i "s|skip-networking|# skip-networking|g" /etc/my.cnf.d/mariadb-server.cnf
+# sed -i "s|.*bind-address\s*=.*|bind-address=0.0.0.0|g" /etc/my.cnf.d/mariadb-server.cnf
 
 mysqld --user=mysql --bootstrap < /tmp/dbSetup.sql
 exec /usr/sbin/mysqld --user=mysql --console > /dev/null

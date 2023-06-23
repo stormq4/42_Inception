@@ -59,11 +59,11 @@ services:
     volumes:
       - DB:/var/lib/mysql/
     restart: always
-    deploy:
-        resources:
-          limits:
-            cpus: '0.50'
-            memory: 500M  
+    # deploy:
+    #     resources:
+    #       limits:
+    #         cpus: '0.50'
+    #         memory: 500M  
     
 
     

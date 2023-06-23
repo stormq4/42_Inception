@@ -19,8 +19,7 @@ RUN openssl req -nodes -newkey rsa:4096 -x509 \
 -subj "/C=NL/ST=Poepstate/L=Kipdorp/O=dikkelul Inc./CN=adsf.hoi" 
 
 RUN mkdir -p /var/www/html
-# COPY index.html /var/www/html
 
 
-# why deamon off;
+RUN nginx -t
 ENTRYPOINT ["/usr/sbin/nginx", "-g", "daemon off;"] 

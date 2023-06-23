@@ -7,7 +7,7 @@ echo "-----------START script for wordpress------------"
 if [ ! -f "index.php" ]
 then
 	echo "------STAR installing wordpress ------"
-	while ! mysql -h$MDB_HOST -u$WP_USER -p$WP_PASSWORD $WP_DB_NAME & 
+	while ! mariadb -h$MDB_HOST -u$WP_USER -p$WP_PASSWORD & 
 	do
 	# > /dev/null
 		sleep 3

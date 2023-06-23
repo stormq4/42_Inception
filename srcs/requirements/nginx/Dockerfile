@@ -1,9 +1,12 @@
 FROM debian:buster
 
-RUN apt-get update && apt-get -y install nginx openssl 
-
 # fast cgi for the niging server https://bobcares.com/blog/docker-compose-nginx-php-fpm-mysql-wordpress/
-RUN apt-get install -y libfcgi0ldbl
+RUN apt-get update && \
+	apt-get -y install \
+				nginx \
+				openssl \
+				libfcgi0ldbl
+
 
 COPY conf/nginx.conf /etc/nginx/conf.d/default.conf
 # COPY conf/nginx.conf etc/nginx/nginx.conf
@@ -20,4 +23,4 @@ RUN mkdir -p /var/www/html
 
 
 # why deamon off;
-ENTRYPOINT ["nginx", "-g", "daemon off;"] 
+ENTRYPOINT ["/usr/sbin/nginx", "-g", "daemon off;"] 

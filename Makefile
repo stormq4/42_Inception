@@ -30,6 +30,7 @@ purge: stop
 	sudo docker compose -f srcs/docker-compose.yml down -v
 	sudo docker system prune -af --volumes
 	sudo rm -rvf $(HOME)/data/WordPress $(HOME)/data/DB
+	sudo docker pull debian:buster
 
 debian:
 	sudo docker pull debian:buster

@@ -4,7 +4,7 @@ set -x
 echo "-----------START script for wordpress------------"
 # https://blog.sucuri.net/2022/11/wp-cli-how-to-install-wordpress-via-ssh.html
 
-if [ ! -f "/var/www/html/index.php" ]
+if [ ! -f "index.php" ]
 then
 	echo "------STAR installing wordpress ------"
 	while ! mysql -h$MDB_HOST -u$WP_USER -p$WP_PASSWORD $WP_DB_NAME & 

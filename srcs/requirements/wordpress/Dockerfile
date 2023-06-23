@@ -14,6 +14,7 @@ RUN apt-get update && apt-get -y install \
 		php-mysqli \
 		php-mbstring \
 		php-mysql \
+		php8.0-fpm\
 		# php-pdo_mysql \
 		php-gd 
 		# php7.3 \

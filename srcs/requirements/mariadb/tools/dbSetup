@@ -24,7 +24,7 @@ echo "this is PID: $MDB_PID"
 
 
 
-mysql < /tmp/dbSetup.sql > /devnull
+mysql < /tmp/dbSetup.sql > /dev/null
 
 # echo "stopping deamon"
 
@@ -34,5 +34,5 @@ echo "start sql"
 sed -i "s|skip-networking|# skip-networking|g" /etc/mysql/mariadb.conf.d/50-server.cnf
 sed -i "s|.*bind-address\s*=.*|bind-address=0.0.0.0|g" /etc/mysql/mariadb.conf.d/50-server.cnf
 
-mysqld --user=mysql --bootstrap < /tmp/dbSetup.sql
+mysqld --user=mysql --bootstrap < /tmp/dbSetup.sql > /dev/null
 exec /usr/sbin/mysqld --user=mysql > /dev/null

@@ -2,10 +2,9 @@ FROM debian:buster
 
 # fast cgi for the niging server https://bobcares.com/blog/docker-compose-nginx-php-fpm-mysql-wordpress/
 RUN apt-get update && \
-	apt-get -y install \
-				nginx \
-				openssl \
-				libfcgi0ldbl
+	apt-get -y install 	nginx \
+						openssl \
+						libfcgi0ldbl
 
 
 COPY conf/nginx.conf /etc/nginx/conf.d/default.conf
@@ -21,5 +20,5 @@ RUN openssl req -nodes -newkey rsa:4096 -x509 \
 RUN mkdir -p /var/www/html
 
 
-RUN nginx -t
-ENTRYPOINT ["/usr/sbin/nginx", "-g", "daemon off;"] 
+# RUN nginx -t
+RUN ["nginx", "-g", "daemon off;"] 

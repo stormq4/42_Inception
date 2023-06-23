@@ -15,7 +15,6 @@ RUN apt-get update && apt-get -y install \
 		php-mbstring \
 		php-mysql \
 		php-pdo_mysql \
-		lsb-release \
 		php-gd 
 		# php7.3 \
 		# php-fpm \

@@ -4,7 +4,7 @@ set -x
 echo "-----------START script for wordpress--------------"
 # https://blog.sucuri.net/2022/11/wp-cli-how-to-install-wordpress-via-ssh.html
 
-until [ mysql -h$MDB_HOST -u$WP_USER -p$WP_PASSWORD $WP_DB_NAME ] & > /dev/null
+until  mysql -h$MDB_HOST -u$WP_USER -p$WP_PASSWORD $WP_DB_NAME & > /dev/null
 do
 	sleep 3
 done

@@ -1,7 +1,7 @@
 FROM debian:buster
 
 RUN apt-get update && apt-get -y install \
-		php-openssl \
+		# php-openssl \
 		php-phar \
 		php-fpm \
 		php \
@@ -14,7 +14,7 @@ RUN apt-get update && apt-get -y install \
 		php-mysqli \
 		php-mbstring \
 		php-mysql \
-		php-pdo_mysql \
+		# php-pdo_mysql \
 		php-gd 
 		# php7.3 \
 		# php-fpm \

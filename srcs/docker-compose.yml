@@ -5,17 +5,17 @@ volumes:
       type: none
       o: bind
       device: /Users/stormdequay/data/DB/
-  # WordPress:
-  #   name: WordPress
-  #   driver_opts:
-  #     type: none
-  #     o: bind
-  #     device: /Users/stormdequay/data/WordPress/
+  WordPress:
+    name: WordPress
+    driver_opts:
+      type: none
+      o: bind
+      device: /Users/stormdequay/data/WordPress/
 
 
 
 networks:
-  # nxwp:
+  nxwp:
   wpmdb:
 
 services:

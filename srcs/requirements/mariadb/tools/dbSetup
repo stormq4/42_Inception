@@ -1,17 +1,6 @@
 #!bin/bash
 
 set -x
-
-echo "starting deamon"
-/usr/sbin/mysqld --user=mysql --skip-networking --default-time-zone=SYSTEM --wsrep_on=OFF \
-		--expire-logs-days=0 \
-		--loose-innodb_buffer_pool_load_at_startup=0 > /dev/null &
-MDB_PID=$!
-sleep 10
-
-echo "this is PID: $MDB_PID"
-
-
 cat << STOP > /tmp/dbSetup.sql
 	CREATE DATABASE IF NOT EXISTS $WP_DB_NAME;\
 	CREATE USER IF NOT EXISTS '$WP_USER'@'%' IDENTIFIED BY '$WP_PASSWORD';\
@@ -23,6 +12,17 @@ STOP
 echo "------testing sql file----"
 cat /tmp/dbSetup.sql
 echo "----done---"
+
+echo "starting deamon"
+/usr/sbin/mysqld --user=mysql --skip-networking --default-time-zone=SYSTEM --wsrep_on=OFF \
+		--expire-logs-days=0 \
+		--loose-innodb_buffer_pool_load_at_startup=0 > /dev/null &
+MDB_PID=$!
+sleep 10
+
+echo "this is PID: $MDB_PID"
+
+
 
 mysql < /tmp/dbSetup.sql > /devnull
 

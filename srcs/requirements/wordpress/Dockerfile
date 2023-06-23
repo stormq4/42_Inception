@@ -29,7 +29,7 @@ RUN wp cli update
 
 # COPY /conf/www.conf /etc/php/7.3/fpm/pool.d
 RUN mkdir -p /var/www/html
-# RUN mkdir -p /run/php
+RUN mkdir -p /run/php
 # COPY /conf/wp-config.php /var/www/html/wp-config.php
 COPY /tools/setup.sh /tmp/
 # RUN chmod 755 /etc/php/7.3/fpm/pool.d/www.conf

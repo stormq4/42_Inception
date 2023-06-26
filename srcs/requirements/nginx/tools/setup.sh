@@ -18,4 +18,4 @@ else
 	echo "OPENSSL certificate present"
 fi
 
-exec $@
+exec "$@"

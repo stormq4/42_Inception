@@ -26,6 +26,8 @@ RUN openssl req -nodes -newkey rsa:4096 -x509 \
 
 RUN mkdir -p /var/www/html
 
+COPY tools/test.sh /tmp/
 
 # CMD nginx -t
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+ENTRYPOINT ["sh", "/tmp/test.sh"]
+CMD ["nginx", "-g", "daemon off;"]

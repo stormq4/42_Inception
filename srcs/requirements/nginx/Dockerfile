@@ -29,5 +29,5 @@ RUN mkdir -p /var/www/html
 COPY tools/test.sh /tmp/
 
 # CMD nginx -t
-CMD ./tmp/test.sh
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+ENTRYPOINT ["sh", "tmp/test.sh"]
+CMD ["nginx", "-g", "daemon off;"]

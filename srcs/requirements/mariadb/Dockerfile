@@ -14,7 +14,7 @@ RUN mkdir -p /var/run/mysqld
 RUN chown -R mysql:root /var/run/mysqld
 RUN chmod 777 /var/run/mysqld
 	
-RUN	mysql_install_db --basedir=/usr --datadir=/var/lib/mysql --user=mysql --skip-test-db > /dev/null
+# RUN	mysql_install_db --basedir=/usr --datadir=/var/lib/mysql --user=mysql --skip-test-db > /dev/null
 #> /dev/null
 
 # RUN sed -i 's/bind-address            = 127.0.0.1/bind-address            = 0.0.0.0/' /etc/mysql/mariadb.conf.d/50-server.cnf

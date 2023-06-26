@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Kamaaan"
 
-if [ ! -f /etc/nginx/ssl/storm.crt ]
+if [ ! -f /etc/ssl/certs/certificate.crt ]
 then
 	echo "Configuring new OPENSSL certificate"
 	openssl req \

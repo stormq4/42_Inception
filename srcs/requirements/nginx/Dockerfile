@@ -22,12 +22,12 @@ RUN mkdir -p /etc/nginx/ssl/
 RUN openssl req \
 -nodes \
 -new \
--newkey rsa:4096 \
+-newkey rsa:2048 \
 -sha256 \
 -x509 \
 -days 365 \
--out /etc/nginx/ssl/storm.crt \
--keyout /etc/nginx/ssl/storm.key \
+-out /etc/ssl/storm.crt \
+-keyout /etc/ssl/storm.key \
 -subj "/C=NL/ST=Noord-Holland/L=Amsterdam/O=Codam/CN=sde-quai.42.fr"
 
 RUN mkdir -p /var/www/html

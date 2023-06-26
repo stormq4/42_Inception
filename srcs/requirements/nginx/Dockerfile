@@ -9,7 +9,13 @@ RUN apt-get update && \
 EXPOSE 443
 
 # COPY conf/nginx.conf /etc/nginx/sites-available/nginx.conf
-COPY conf/nginx.conf /etc/nginx/conf.d/default.conf
+# COPY conf/nginx.conf /etc/nginx/conf.d/default.conf
+
+COPY	conf/nginx.conf /etc/nginx/sites-available/nginx.conf
+
+RUN     rm -rf /etc/nginx/sites-enabled/*
+RUN     ln -sf /etc/nginx/sites-available/nginx.conf /etc/nginx/sites-enabled/nginx.conf
+
 
 RUN mkdir -p /etc/nginx/ssl/
 

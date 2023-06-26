@@ -6,7 +6,7 @@ echo "-----------START script for wordpress------------"
 
 if [ ! -f "/var/www/html/wp-config.php" ]; then
 	echo "------START Connecting to database------"
-	while mariadb -h$MDB_HOST -u$WP_USER -p$WP_PASSWORD 
+	while mariadb -h$DB_HOST -u$WP_USER -p$WP_PASSWORD 
 	do
 	# > /dev/null
 		sleep 1
@@ -16,10 +16,10 @@ if [ ! -f "/var/www/html/wp-config.php" ]; then
 	wp core download --allow-root;
 
 	wp config create \
-	--dbname=$WP_DB_NAME \
+	--dbname=DB_NAME \
 	--dbuser=$WP_USER \
 	--dbpass=$WP_PASSWORD \
-	--dbhost=$MDB_HOST \
+	--dbhost=$DB_HOST \
 	--allow-root;
 	
 	wp core install \

@@ -1,5 +1,5 @@
 <?php
-define( 'DB_NAME', getenv('WB_DB_NAME') );
+define( 'DB_NAME', getenv('DB_NAME') );
 
 define( 'DB_USER', getenv('WP_ADMIN_USER') );
 define( 'DB_PASSWORD', getenv('WP_ADMIN_PASSWORD') );

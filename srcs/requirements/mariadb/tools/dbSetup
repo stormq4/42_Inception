@@ -18,7 +18,8 @@ echo "starting deamon"
 		--expire-logs-days=0 \
 		--loose-innodb_buffer_pool_load_at_startup=0 > /dev/null &
 MDB_PID=$!
-sleep 10
+
+# sleep 10
 
 echo "this is PID: $MDB_PID"
 

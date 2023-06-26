@@ -4,7 +4,7 @@ set -x
 echo "-----------START script for wordpress------------"
 # https://blog.sucuri.net/2022/11/wp-cli-how-to-install-wordpress-via-ssh.html
 
-if [ ! -f "/var/www/html/wordpress/index.php" ]
+if [ ! -f "/var/www/html/index.php" ]
 then
 	echo "------START Connecting to database------"
 	while mariadb -h$MDB_HOST -u$WP_USER -p$WP_PASSWORD 

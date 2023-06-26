@@ -17,7 +17,7 @@ RUN     rm -rf /etc/nginx/sites-enabled/*
 RUN     ln -sf /etc/nginx/sites-available/nginx.conf /etc/nginx/sites-enabled/nginx.conf
 
 
-RUN mkdir -p /etc/nginx/ssl/
+# RUN mkdir -p /etc/nginx/ssl/
 
 # RUN openssl req \
 # -nodes \

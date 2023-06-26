@@ -32,8 +32,8 @@ RUN openssl req \
 
 RUN mkdir -p /var/www/html
 
-COPY tools/test.sh /tmp/
+COPY tools/setup.sh /tmp/
 
 # CMD nginx -t
-# ENTRYPOINT ["sh", "tmp/test.sh"]
+ENTRYPOINT ["sh", "tmp/setup.sh"]
 CMD ["/usr/sbin/nginx", "-g", "daemon off;"]

@@ -7,8 +7,10 @@ RUN apt-get update && \
 						libfcgi0ldbl
 
 
-COPY conf/nginx.conf /etc/nginx/conf.d/default.conf
+COPY conf/nginx.conf /etc/nginx/sites-available/nginx.conf
 # COPY conf/nginx.conf etc/nginx/nginx.conf
+
+RUN sed -i "s/SERVER_NAME/$DOMAIN_NAME/g" /etc/nginx/sites-enabled/nginx.conf
 
 RUN mkdir -p /etc/nginx/ssl/
 

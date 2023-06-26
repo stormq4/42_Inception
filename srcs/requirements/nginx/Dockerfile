@@ -3,7 +3,8 @@ FROM debian:buster
 # fast cgi for the niging server https://bobcares.com/blog/docker-compose-nginx-php-fpm-mysql-wordpress/
 RUN apt-get update && \
 	apt-get -y install 	nginx \
-						openssl 
+						openssl \
+						libfcgi0ldbl 
 
 
 EXPOSE 443

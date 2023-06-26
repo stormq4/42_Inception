@@ -27,3 +27,5 @@ COPY tools/dbSetup /tmp/
 RUN chmod 777 /tmp/dbSetup
 
 ENTRYPOINT ["sh", "/tmp/dbSetup"]
+CMD ["mysqld"]
+

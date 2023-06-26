@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Kamaaan"
 
-if [ ! -f /etc/nginx/ssl/storm.pem ]
+if [ ! -f /etc/nginx/ssl/storm.crt ]
 then
 	echo "not good"
 else

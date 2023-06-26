@@ -20,7 +20,7 @@ RUN     ln -sf /etc/nginx/sites-available/nginx.conf /etc/nginx/sites-enabled/ng
 RUN mkdir -p /etc/nginx/ssl/
 
 RUN openssl req -nodes -newkey rsa:4096 -x509 \
--out /etc/nginx/ssl/storm.pem \
+-out /etc/nginx/ssl/storm.crt \
 -keyout /etc/nginx/ssl/storm.key \
 -subj "/C=NL/ST=Poepstate/L=Kipdorp/O=dikkelul Inc./CN=adsf.hoi" 
 

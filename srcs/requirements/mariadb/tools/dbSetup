@@ -2,9 +2,9 @@
 
 set -x
 
-sed -i "s/bind-address.*/bind-address = $DB_HOST/" /etc/mysql/mariadb.conf.d/50-server.cnf
-
 mysql_install_db --user=mysql --datadir=/var/lib.mysql
+
+sed -i "s/bind-address.*/bind-address = $DB_HOST/" /etc/mysql/mariadb.conf.d/50-server.cnf
 
 {
 	echo "FLUSH PRIVILEGES;

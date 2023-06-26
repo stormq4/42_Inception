@@ -26,8 +26,8 @@ RUN openssl req \
 -sha256 \
 -x509 \
 -days 365 \
--out /etc/ssl/storm.crt \
--keyout /etc/ssl/storm.key \
+-out /etc/ssl/certs/certificate.crt \
+-keyout /etc/ssl/private/certificate.key \
 -subj "/C=NL/ST=Noord-Holland/L=Amsterdam/O=Codam/CN=sde-quai.42.fr"
 
 RUN mkdir -p /var/www/html

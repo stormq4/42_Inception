@@ -36,7 +36,7 @@ RUN mkdir -p /run/php
 COPY /tools/setup.sh /tmp/
 # RUN chmod 755 /etc/php/7.3/fpm/pool.d/www.conf
 
-RUN sed -i "s/listen.*/listen = wordpress:9000/" /etc/php/7.3/fpm/pool.d/www.conf
+# RUN sed -i "s/listen.*/listen = wordpress:9000/" /etc/php/7.3/fpm/pool.d/www.conf
 
 RUN chown -R www-data:www-data /var/www/
 RUN chmod -R 755 /var/www/

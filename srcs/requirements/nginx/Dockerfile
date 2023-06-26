@@ -3,12 +3,11 @@ FROM debian:buster
 # fast cgi for the niging server https://bobcares.com/blog/docker-compose-nginx-php-fpm-mysql-wordpress/
 RUN apt-get update && \
 	apt-get -y install 	nginx \
-						openssl \
-						libfcgi0ldbl
+						openssl 
 
 
 # COPY conf/nginx.conf /etc/nginx/sites-available/nginx.conf
-COPY conf/nginx.conf etc/nginx/http.d/inception.conf
+COPY conf/nginx.conf etc/nginx/nginx.conf
 # RUN     rm -rf /etc/nginx/sites-enabled/*
 # RUN     ln -sf /etc/nginx/sites-available/nginx.conf /etc/nginx/sites-enabled/nginx.conf
 

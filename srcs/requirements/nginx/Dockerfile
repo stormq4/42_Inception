@@ -19,7 +19,13 @@ RUN     ln -sf /etc/nginx/sites-available/nginx.conf /etc/nginx/sites-enabled/ng
 
 RUN mkdir -p /etc/nginx/ssl/
 
-RUN openssl req -nodes -new -newkey rsa:4096 -sha256  -x509 -days 365 \
+RUN openssl req \
+-nodes \
+-new \
+-newkey rsa:4096 \
+-sha256 \
+-x509 \
+-days 365 \
 -out /etc/nginx/ssl/storm.crt \
 -keyout /etc/nginx/ssl/storm.key \
 -subj "/C=NL/ST=Noord-Holland/L=Amsterdam/O=Codam/CN=sde-quai.42.fr"

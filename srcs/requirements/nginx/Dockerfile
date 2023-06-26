@@ -7,10 +7,10 @@ RUN apt-get update && \
 						libfcgi0ldbl
 
 
-COPY conf/nginx.conf /etc/nginx/sites-available/nginx.conf
-# COPY conf/nginx.conf etc/nginx/nginx.conf
-RUN     rm -rf /etc/nginx/sites-enabled/*
-RUN     ln -sf /etc/nginx/sites-available/nginx.conf /etc/nginx/sites-enabled/nginx.conf
+# COPY conf/nginx.conf /etc/nginx/sites-available/nginx.conf
+COPY conf/nginx.conf etc/nginx/http.d/inception.conf
+# RUN     rm -rf /etc/nginx/sites-enabled/*
+# RUN     ln -sf /etc/nginx/sites-available/nginx.conf /etc/nginx/sites-enabled/nginx.conf
 
 # RUN sed -i "s/SERVER_NAME/$DOMAIN_NAME/g" /etc/nginx/sites-enabled/nginx.conf
 
@@ -25,4 +25,4 @@ RUN mkdir -p /var/www/html
 
 
 # CMD nginx -t
-CMD ["nginx", "-g", "daemon off;"] 
+ENTRYPOINT ["nginx", "-g", "daemon off;"]

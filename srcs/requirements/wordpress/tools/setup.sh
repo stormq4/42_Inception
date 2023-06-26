@@ -11,6 +11,7 @@ if [ ! -f "/var/www/html/wp-config.php" ]; then
 	# # > /dev/null
 	# 	sleep 1
 	# done
+	mariadb -h$DB_HOST -u$DB_USER -p$DB_PW 
 	echo "------wordpress Connected to mariadb------"
 	echo "------Installing Wordpress------"
 	wp core download --allow-root;

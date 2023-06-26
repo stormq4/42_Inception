@@ -20,6 +20,8 @@ RUN apt-get update && apt-get -y install \
 		# php7.3 \
 		# php-fpm \
 
+EXPOSE 9000
+
 # https://wp-cli.org/
 RUN	curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 RUN chmod +x wp-cli.phar

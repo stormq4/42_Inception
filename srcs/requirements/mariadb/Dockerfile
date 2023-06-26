@@ -6,6 +6,8 @@ RUN apt-get update && apt-get -y install \
 	mariadb-server \
 	mariadb-client 
 
+EXPOSE 3306
+
 COPY conf/50-server.cnf /etc/mysql/mariadb.conf.d/
 
 RUN mkdir -p /run/mysqld

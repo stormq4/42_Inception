@@ -24,7 +24,7 @@ RUN	mysql_install_db --basedir=/usr --datadir=/var/lib/mysql --user=mysql --skip
 # RUN sed -i "s/bind-address.*/bind-address = $DB_HOST/" /etc/mysql/mariadb.conf.d/50-server.cnf
 
 COPY tools/dbSetup /tmp/setup.sh
-RUN chmod +x /tmp/dbSetup
+RUN chmod +x /tmp/setup.sh
 
 ENTRYPOINT ["sh", "/tmp/setup.sh"]
 CMD ["mysqld"]

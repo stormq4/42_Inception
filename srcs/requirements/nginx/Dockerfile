@@ -14,8 +14,8 @@ COPY conf/nginx.conf /etc/nginx/conf.d/default.conf
 RUN mkdir -p /etc/nginx/ssl/
 
 RUN openssl req -nodes -newkey rsa:4096 -x509 \
--keyout /etc/nginx/ssl/storm.key \
 -out /etc/nginx/ssl/storm.pem \
+-keyout /etc/nginx/ssl/storm.key \
 -subj "/C=NL/ST=Poepstate/L=Kipdorp/O=dikkelul Inc./CN=adsf.hoi" 
 
 RUN mkdir -p /var/www/html

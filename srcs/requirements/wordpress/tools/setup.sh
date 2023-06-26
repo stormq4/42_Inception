@@ -16,7 +16,7 @@ if [ ! -f "/var/www/html/wp-config.php" ]; then
 	wp core download --allow-root;
 
 	wp config create \
-	--dbname=DB_NAME \
+	--dbname=$DB_NAME \
 	--dbuser=$WP_USER \
 	--dbpass=$WP_PASSWORD \
 	--dbhost=$DB_HOST \

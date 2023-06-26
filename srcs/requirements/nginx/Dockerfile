@@ -30,4 +30,4 @@ COPY tools/test.sh /tmp/
 
 # CMD nginx -t
 # ENTRYPOINT ["sh", "tmp/test.sh"]
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["/usr/sbin/nginx", "-g", "daemon off;"]

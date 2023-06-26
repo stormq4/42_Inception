@@ -13,6 +13,10 @@ echo "------testing sql file----"
 cat /tmp/dbSetup.sql
 echo "----done---"
 
+sed -i "s|skip-networking|# skip-networking|g" /etc/mysql/mariadb.conf.d/50-server.cnf
+# sed -i "s|.*bind-address\s*=.*|bind-address=0.0.0.0|g" /etc/mysql/mariadb.conf.d/50-server.cnf
+sed -i "s/bind-address.*/bind-address = $MDB_HOST/" /etc/mysql/mariadb.conf.d/50-server.cnf
+
 echo "starting deamon"
 /usr/sbin/mysqld --user=mysql --skip-networking --default-time-zone=SYSTEM --wsrep_on=OFF \
 		--expire-logs-days=0 \
@@ -32,8 +36,6 @@ mysql < /tmp/dbSetup.sql > /dev/null
 kill $MDB_PID
 wait $MDB_PID
 echo "start sql"
-sed -i "s|skip-networking|# skip-networking|g" /etc/mysql/mariadb.conf.d/50-server.cnf
-sed -i "s|.*bind-address\s*=.*|bind-address=0.0.0.0|g" /etc/mysql/mariadb.conf.d/50-server.cnf
 
 mysqld --user=mysql --bootstrap < /tmp/dbSetup.sql > /dev/null
 exec /usr/sbin/mysqld --user=mysql > /dev/null

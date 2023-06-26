@@ -17,8 +17,8 @@ if [ ! -f "/var/www/html/wp-config.php" ]; then
 
 	wp config create \
 	--dbname=$DB_NAME \
-	--dbuser=$WP_USER \
-	--dbpass=$WP_PASSWORD \
+	--dbuser=$DB_USER \
+	--dbpass=$DB_PW \
 	--dbhost=$DB_HOST \
 	--allow-root;
 	

@@ -9,8 +9,10 @@ RUN apt-get update && \
 
 COPY conf/nginx.conf /etc/nginx/sites-available/nginx.conf
 # COPY conf/nginx.conf etc/nginx/nginx.conf
+RUN     rm -rf /etc/nginx/sites-enabled/*
+RUN     ln -sf /etc/nginx/sites-available/nginx.conf /etc/nginx/sites-enabled/nginx.conf
 
-RUN sed -i "s/SERVER_NAME/$DOMAIN_NAME/g" /etc/nginx/sites-enabled/nginx.conf
+# RUN sed -i "s/SERVER_NAME/$DOMAIN_NAME/g" /etc/nginx/sites-enabled/nginx.conf
 
 RUN mkdir -p /etc/nginx/ssl/
 

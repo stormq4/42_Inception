@@ -8,12 +8,11 @@ RUN apt-get update && apt-get -y install \
 
 EXPOSE 3306
 
-COPY conf/50-server.cnf /etc/mysql/mariadb.conf.d/
+# COPY conf/50-server.cnf /etc/mysql/mariadb.conf.d/
 
-RUN mkdir -p /run/mysqld
-
-RUN chown -R mysql:mysql /run/mysqld
-RUN chmod 777 /run/mysqld
+RUN mkdir -p /var/run/mysqld
+RUN chown -R mysql:root /var/run/mysqld
+RUN chmod 777 /var/run/mysqld
 	
 RUN	mysql_install_db --basedir=/usr --datadir=/var/lib/mysql --user=mysql --skip-test-db > /dev/null
 #> /dev/null
@@ -22,10 +21,11 @@ RUN	mysql_install_db --basedir=/usr --datadir=/var/lib/mysql --user=mysql --skip
 # RUN sed -i 's/skip-networking/#skip-networking/g' /etc/mysql/mariadb.conf.d/50-server.cnf
 # RUN sed -i "s|.*bind-address\s*=.*|bind-address=0.0.0.0|g" /etc/mysql/mariadb.conf.d/50-server.cnf
 # RUN sed -i "s|skip-networking|# skip-networking|g" /etc/mysql/mariadb.conf.d/50-server.cnf
+# RUN sed -i "s/bind-address.*/bind-address = $DB_HOST/" /etc/mysql/mariadb.conf.d/50-server.cnf
 
-COPY tools/dbSetup /tmp/
-RUN chmod 777 /tmp/dbSetup
+COPY tools/dbSetup /tmp/setup.sh
+RUN chmod +x /tmp/dbSetup
 
-ENTRYPOINT ["sh", "/tmp/dbSetup"]
+ENTRYPOINT ["sh", "/tmp/setup.sh"]
 CMD ["mysqld"]
 

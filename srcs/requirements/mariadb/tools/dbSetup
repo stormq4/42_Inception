@@ -2,6 +2,8 @@
 
 set -x
 
+sed -i "s/bind-address.*/bind-address = $DB_HOST/" /etc/mysql/mariadb.conf.d/50-server.cnf
+
 echo  > /tmp/dbSetup.sql \
 "CREATE DATABASE IF NOT EXISTS $DB_NAME;
 CREATE USER IF NOT EXISTS '$DB_USER'@'%' IDENTIFIED BY '$DB_PW';
@@ -15,7 +17,6 @@ echo "----done---"
 
 # sed -i "s|skip-networking|# skip-networking|g" /etc/mysql/mariadb.conf.d/50-server.cnf
 # sed -i "s|.*bind-address\s*=.*|bind-address=0.0.0.0|g" /etc/mysql/mariadb.conf.d/50-server.cnf
-sed -i "s/bind-address.*/bind-address = $DB_HOST/" /etc/mysql/mariadb.conf.d/50-server.cnf
 
 echo "starting deamon"
 /usr/sbin/mysqld --user=mysql --skip-networking --default-time-zone=SYSTEM --wsrep_on=OFF \

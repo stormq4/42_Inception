@@ -1,6 +1,8 @@
 #!/bin/bash
 echo "Kamaaan"
 
+sed -i "s/SERVER_NAME/$DOMAIN_NAME/g" /etc/nginx/sites-enabled/nginx.conf
+
 if [ ! -f /etc/ssl/certs/certificate.crt ]
 then
 	echo "Configuring new OPENSSL certificate"

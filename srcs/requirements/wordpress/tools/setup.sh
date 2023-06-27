@@ -2,7 +2,6 @@
 
 set -x
 echo "-----------START script for wordpress------------"
-# https://blog.sucuri.net/2022/11/wp-cli-how-to-install-wordpress-via-ssh.html
 
 if [ ! -f "/var/www/html/wp-config.php" ]; then
 	echo "------START Connecting to database------"
@@ -47,5 +46,4 @@ else
 fi
 
 exec "$@"
-# exec php-fpm7.3 --nodaemonize
 echo "-----------END script for wordpress------------"

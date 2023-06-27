@@ -1,8 +1,7 @@
-all:
+all: debian
 	mkdir -p $(HOME)/data/WordPress
 	mkdir -p $(HOME)/data/DB
 	sudo docker compose -f srcs/docker-compose.yml up --build
-
 
 stop:
 	sudo docker compose -f srcs/docker-compose.yml stop

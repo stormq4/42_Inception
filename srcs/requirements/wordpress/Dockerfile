@@ -15,10 +15,6 @@ RUN apt-get update && apt-get -y install \
 		php-mbstring \
 		php-mysql \
 		php-gd 
-		# php8.0-fpm \
-		# php-pdo_mysql \
-		# php7.3 \
-		# php-fpm \
 
 EXPOSE 9000
 
@@ -27,14 +23,11 @@ RUN	curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli
 RUN chmod +x wp-cli.phar
 RUN mv wp-cli.phar /usr/local/bin/wp
 
-# RUN wp cli update
-
-# COPY /conf/www.conf /etc/php/7.3/fpm/pool.d
 RUN mkdir -p /var/www/html
 RUN mkdir -p /run/php
-# COPY /conf/wp-config.php /var/www/html/wp-config.php
+
 COPY /tools/setup.sh /tmp/
-# RUN chmod 755 /etc/php/7.3/fpm/pool.d/www.conf
+
 
 RUN sed -i "s/listen.*/listen = wordpress:9000/" /etc/php/7.3/fpm/pool.d/www.conf
 
@@ -45,3 +38,4 @@ RUN chmod 777 /tmp/setup.sh
 WORKDIR /var/www/html
 
 ENTRYPOINT ["sh", "/tmp/setup.sh"]
+CMD ["php-fpm7.3", "--nodaemonize"]

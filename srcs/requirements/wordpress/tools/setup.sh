@@ -6,15 +6,14 @@ echo "-----------START script for wordpress------------"
 
 if [ ! -f "/var/www/html/wp-config.php" ]; then
 	echo "------START Connecting to database------"
-	# while mariadb -h$DB_HOST -u$DB_USER -p$DB_PW 
-	# do
-	# # > /dev/null
-	# 	sleep 1
-	# done
+
 	mariadb -h$DB_HOST -u$DB_USER -p$DB_PW 
+	
 	echo "------wordpress Connected to mariadb------"
-	echo "------Installing Wordpress------"
+	
 	wp core download --allow-root;
+
+	echo "------Downloaded Wordpress------"
 
 	wp config create \
 	--dbname=$DB_NAME \
@@ -23,6 +22,8 @@ if [ ! -f "/var/www/html/wp-config.php" ]; then
 	--dbhost=$DB_HOST \
 	--allow-root;
 	
+	echo "-------Created Config file-------"
+
 	wp core install \
 	--url=$DOMAIN_NAME \
 	--title="Hallo Wereld!" \
@@ -31,6 +32,8 @@ if [ ! -f "/var/www/html/wp-config.php" ]; then
 	--admin_email=$WP_ADMIN_USER@$DOMAIN_NAME \
 	--skip-email \
 	--allow-root;
+	
+	echo "------Installed Wordpress------"
 
 	wp user create \
 	$WP_USER $WP_USER@$DOMAIN_NAME \
@@ -40,8 +43,9 @@ if [ ! -f "/var/www/html/wp-config.php" ]; then
 
 	echo "------Wordpress Installed------"
 else
-	echo "------wordpress already present------"
+	echo "------Wordpress already present------"
 fi
 
-exec php-fpm7.3 --nodaemonize
+exec "$@"
+# exec php-fpm7.3 --nodaemonize
 echo "-----------END script for wordpress------------"
